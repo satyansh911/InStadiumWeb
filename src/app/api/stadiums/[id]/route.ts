@@ -3,11 +3,12 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const stadium = await prisma.stadium.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         sportsPlayed: true,
         players: true,
