@@ -42,25 +42,6 @@ export const getPlayers = (stadiumId?: string) =>
   apiFetch<Record<string, unknown>[]>(stadiumId ? `/api/players?stadiumId=${stadiumId}` : '/api/players');
 
 // ─────────────────────────── MATCHES ────────────────────────────
-
 export const getMatches = (type: 'live' | 'upcoming') =>
   apiFetch<Record<string, unknown>[]>(`/api/matches/${type}`);
-
-// ─────────────────────────── PRESS ──────────────────────────────
-
-export const getPressFeatures = () =>
-  apiFetch<Record<string, unknown>[]>('/api/press');
-
-// ─────────────────────────── PORTFOLIO ──────────────────────────
-
-export const getPortfolio = () =>
-  apiFetch<Record<string, unknown>[]>('/api/portfolio');
-
-export const getPortfolioById = (id: string) =>
-  apiFetch<Record<string, unknown>>(`/api/portfolio/${id}`);
-
-// ─────────────────────────── QR ────────────────────────────────
-
-export const resolveQR = (qrCode: string) =>
-  apiFetch<Record<string, unknown>>(`/api/qr/resolve?code=${qrCode}`);
 
