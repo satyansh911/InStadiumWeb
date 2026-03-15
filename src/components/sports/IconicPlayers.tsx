@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import ScrollReveal from "../ScrollReveal";
 import { Trophy, Star } from "lucide-react";
 import { getOptimizedImageUrl } from "@/lib/cloudinary";
@@ -35,41 +36,46 @@ export default function IconicPlayers({ players, sportName }: IconicPlayersProps
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {indianPlayers.map((player, idx) => (
               <ScrollReveal key={player.id} delay={(idx % 3 + 1) as 1 | 2 | 3}>
-                <div className="group relative">
-                  {/* Player Image with Background Decoration */}
-                  <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl shadow-plum/20">
-                    <Image 
-                      src={getOptimizedImageUrl(player.image, { width: 600, height: 800, crop: 'fill' })} 
-                      alt={player.name}
-                      fill
-                      unoptimized
-                      className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-plum/80 via-transparent to-transparent opacity-60" />
-                    
-                    {/* Badge */}
-                    <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-rose/90 backdrop-blur-md flex items-center justify-center border border-white/20">
-                      <Star size={20} className="text-blush fill-current" />
-                    </div>
-                  </div>
+                  <Link href={`/player/${player.id}`} className="group relative block">
+                    {/* Player Image with Background Decoration */}
+                    <div className="relative aspect-[3/4] rounded-[2.5rem] overflow-hidden mb-8 shadow-2xl shadow-plum/20">
+                      <Image 
+                        src={getOptimizedImageUrl(player.image, { width: 600, height: 800, crop: 'fill' })} 
+                        alt={player.name}
+                        fill
+                        unoptimized
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-plum/80 via-transparent to-transparent opacity-60" />
+                      
+                      {/* Badge */}
+                      <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-rose/90 backdrop-blur-md flex items-center justify-center border border-white/20">
+                        <Star size={20} className="text-blush fill-current" />
+                      </div>
 
-                  {/* Player Info */}
-                  <div className="space-y-6 px-4">
-                    <div>
-                      <h4 className="text-3xl font-light text-plum group-hover:text-rose transition-colors duration-300 italic">{player.name}</h4>
-                      <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-plum/40 mt-1 font-bold">India &bull; {sportName}</p>
+                      {/* View Journey Overlay */}
+                      <div className="absolute inset-0 bg-plum/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-blush font-bold border-b border-blush/30 pb-2">View Journey</span>
+                      </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      {player.achievements.map((achievement, i) => (
-                        <div key={i} className="flex items-center gap-2 px-3 py-1 bg-rose/5 border border-rose/10 rounded-full">
-                          <Trophy size={10} className="text-rose" />
-                          <span className="font-sans text-[9px] tracking-widest uppercase text-plum/60">{achievement}</span>
-                        </div>
-                      ))}
+                    {/* Player Info */}
+                    <div className="space-y-6 px-4">
+                      <div>
+                        <h4 className="text-3xl font-light text-plum group-hover:text-rose transition-colors duration-300 italic">{player.name}</h4>
+                        <p className="font-sans text-[10px] tracking-[0.3em] uppercase text-plum/40 mt-1 font-bold">India &bull; {sportName}</p>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        {player.achievements.map((achievement, i) => (
+                          <div key={i} className="flex items-center gap-2 px-3 py-1 bg-rose/5 border border-rose/10 rounded-full">
+                            <Trophy size={10} className="text-rose" />
+                            <span className="font-sans text-[9px] tracking-widest uppercase text-plum/60">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </Link>
               </ScrollReveal>
             ))}
           </div>

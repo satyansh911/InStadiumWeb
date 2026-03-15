@@ -23,11 +23,10 @@ const Popup = dynamic(
 
 import { OSM_CONFIG } from "@/lib/maps";
 import { useEffect, useState } from "react";
-import L from "leaflet";
-
 // Fix for default marker icon not appearing in Leaflet with Next.js
 const fixLeafletIcon = () => {
   if (typeof window !== "undefined") {
+    const L = require("leaflet");
     // @ts-ignore
     delete L.Icon.Default.prototype._getIconUrl;
     L.Icon.Default.mergeOptions({
@@ -59,7 +58,7 @@ export default function StadiumMap({ lat, lng, stadiumName }: StadiumMapProps) {
   );
 
   return (
-    <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-rose/10 z-0">
+    <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-rose/10 z-10">
       <MapContainer
         center={[lat, lng]}
         zoom={15}

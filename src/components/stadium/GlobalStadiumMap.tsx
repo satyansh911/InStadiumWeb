@@ -74,7 +74,7 @@ export default function GlobalStadiumMap({ stadiums }: GlobalStadiumMapProps) {
   );
 
   return (
-    <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-rose/10 z-0 bg-blush/10">
+    <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-rose/10 z-10 bg-blush/10">
       <MapContainer
         center={[20.5937, 78.9629]} // Center of India
         zoom={5}

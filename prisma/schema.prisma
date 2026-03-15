@@ -49,7 +49,10 @@ model Player {
   sport          Sport     @relation(fields: [sportId], references: [id])
   country        String
   image          String?
+  bio            String?
   achievements   Json?     // Array of achievements
+  careerTimeline Json?     // Array of {year, event}
+  stats          Json?     // Array of {label, value}
   stadiumsPlayed Stadium[]
 }
 

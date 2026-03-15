@@ -11,6 +11,8 @@ import NearbyStadiums from "@/components/stadium/NearbyStadiums";
 import ChatbotWidget from "@/components/stadium/ChatbotWidget";
 import StadiumMap from "@/components/stadium/StadiumMap";
 
+export const revalidate = 60;
+
 export default async function StadiumPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
@@ -25,11 +27,21 @@ export default async function StadiumPage({ params }: { params: Promise<{ id: st
   // Map Prisma Json fields to component props with fallbacks
   const stadium = stadiumData ? {
     ...stadiumData,
-    gallery: (stadiumData.galleryImages as any[])?.map(img => img.url) || [],
-    timeline: stadiumData.historyTimeline as any[] || [],
-    matches: stadiumData.upcomingMatches as any[] || [],
-    sports: (stadiumData.sportsPlayed as any[])?.map(s => s.name) || [],
-    heroImage: (stadiumData.galleryImages as any[])?.[0]?.url || "https://images.unsplash.com/photo-1540744158800-4785387f481c?q=80",
+    gallery: Array.isArray(stadiumData.galleryImages) 
+      ? (stadiumData.galleryImages as any[]).map(img => img.url || img) 
+      : [],
+    timeline: Array.isArray(stadiumData.historyTimeline) 
+      ? (stadiumData.historyTimeline as any[]) 
+      : [],
+    matches: Array.isArray(stadiumData.upcomingMatches) 
+      ? (stadiumData.upcomingMatches as any[]) 
+      : [],
+    sports: Array.isArray(stadiumData.sportsPlayed) 
+      ? (stadiumData.sportsPlayed as any[]).map(s => s.name) 
+      : [],
+    heroImage: (Array.isArray(stadiumData.galleryImages) && stadiumData.galleryImages.length > 0)
+      ? (stadiumData.galleryImages as any[])[0].url || (stadiumData.galleryImages as any[])[0]
+      : "https://images.unsplash.com/photo-1540744158800-4785387f481c?q=80",
   } : {
     id: id,
     name: id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '),

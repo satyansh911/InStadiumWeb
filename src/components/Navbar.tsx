@@ -20,7 +20,7 @@ export default function Navbar() {
   return (
     <nav
       className={clsx(
-        "fixed top-0 left-0 w-full z-50 pointer-events-auto",
+        "fixed top-0 left-0 w-full z-[9999] pointer-events-auto",
         "transition-all duration-500 ease-in-out",
         isScrolled
           ? "bg-rose text-blush py-5 shadow-xl shadow-rose/20 backdrop-blur-sm"
