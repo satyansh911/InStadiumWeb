@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Sport {
+  id              String    @id @default(cuid())
+  name            String
+  description     String
+  icon            String?
+  rulebookVideos  Json?     // List of video URLs
+  stadiums        Stadium[]
+  players         Player[]
+}
+
+model Stadium {
+  id                   String      @id @default(cuid())
+  name                 String
+  city                 String
+  state                String
+  country              String      @default("India")
+  capacity             Int
+  builtYear            Int
+  description          String
+  latitude             Float?
+  longitude            Float?
+  sportsPlayed         Sport[]
+  galleryImages        Json?       // Array of image objects {url, caption}
+  historyTimeline      Json?       // Array of events {year, event}
+  legendaryMoments     Json?       // Array of moments {match, description, media}
+  tournaments          Json?       // Array of tournaments {name, year, winner}
+  upcomingMatches      Json?       // Array of matches {teams, date, type}
+  nearbyPlaces         Json?       // Array of places {name, rating, distance, img}
+  players              Player[]
+  qrMappings           QRMapping[]
+}
+
+model Player {
+  id             String    @id @default(cuid())
+  name           String
+  sportId        String
+  sport          Sport     @relation(fields: [sportId], references: [id])
+  country        String
+  image          String?
+  achievements   Json?     // Array of achievements
+  stadiumsPlayed Stadium[]
+}
+
+model QRMapping {
+  id                    String   @id @default(cuid())
+  qrCode                String   @unique
+  stadiumId             String
+  stadium               Stadium  @relation(fields: [stadiumId], references: [id])
+  locationInsideStadium String?
+  createdAt             DateTime @default(now())
+}

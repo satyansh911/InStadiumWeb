@@ -1,0 +1,29 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const code = searchParams.get('code');
+
+  if (!code) {
+    return NextResponse.json({ error: 'QR code required' }, { status: 400 });
+  }
+
+  try {
+    const mapping = await prisma.qRMapping.findUnique({
+      where: { qrCode: code },
+      include: {
+        stadium: true
+      }
+    });
+
+    if (!mapping) {
+      return NextResponse.json({ error: 'QR code not found' }, { status: 404 });
+    }
+
+    return NextResponse.json(mapping);
+  } catch (error) {
+    console.error('API Error:', error);
+    return NextResponse.json({ error: 'Failed to resolve QR' }, { status: 500 });
+  }
+}
