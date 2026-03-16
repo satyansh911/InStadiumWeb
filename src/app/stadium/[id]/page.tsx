@@ -11,7 +11,7 @@ import MatchesSection from "@/components/stadium/MatchesSection";
 import PlayersSection from "@/components/stadium/PlayersSection";
 import NearbyStadiums from "@/components/stadium/NearbyStadiums";
 import ChatbotWidget from "@/components/stadium/ChatbotWidget";
-import StadiumMap from "@/components/stadium/StadiumMap";
+import StadiumMapWrapper from "@/components/stadium/StadiumMapWrapper";
 
 
 export default async function StadiumPage({ params }: { params: Promise<{ id: string }> }) {
@@ -93,10 +93,10 @@ export default async function StadiumPage({ params }: { params: Promise<{ id: st
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-rose font-bold block mb-4">Location</span>
           <h2 className="text-4xl md:text-6xl font-light text-plum leading-tight">Find your path to the <span className="italic">Arena</span></h2>
         </div>
-        <StadiumMap 
-          lat={(stadium as any).latitude || 18.9389} 
-          lng={(stadium as any).longitude || 72.8258} 
-          stadiumName={stadium.name} 
+        <StadiumMapWrapper
+          lat={(stadium as any).latitude || 18.9389}
+          lng={(stadium as any).longitude || 72.8258}
+          stadiumName={stadium.name}
         />
       </section>
 

@@ -1,26 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import "leaflet/dist/leaflet.css";
-
-// Dynamic import with SSR disabled because Leaflet depends on 'window'
-const MapContainer = dynamic(
-  () => import("react-leaflet").then((mod) => mod.MapContainer),
-  { ssr: false }
-);
-const TileLayer = dynamic(
-  () => import("react-leaflet").then((mod) => mod.TileLayer),
-  { ssr: false }
-);
-const Marker = dynamic(
-  () => import("react-leaflet").then((mod) => mod.Marker),
-  { ssr: false }
-);
-const Popup = dynamic(
-  () => import("react-leaflet").then((mod) => mod.Popup),
-  { ssr: false }
-);
-
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { OSM_CONFIG } from "@/lib/maps";
 import { useEffect, useState } from "react";
 // Fix for default marker icon not appearing in Leaflet with Next.js
