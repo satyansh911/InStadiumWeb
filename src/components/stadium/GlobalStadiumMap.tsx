@@ -21,24 +21,11 @@ const Popup = dynamic(
   { ssr: false }
 );
 
-import { OSM_CONFIG } from "@/lib/maps";
 import { useEffect, useState } from "react";
-import L from "leaflet";
+// Remove: import L from "leaflet";
+import { OSM_CONFIG } from "@/lib/maps";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-
-// Fix for default marker icon not appearing in Leaflet with Next.js
-const fixLeafletIcon = () => {
-  if (typeof window !== "undefined") {
-    // @ts-ignore
-    delete L.Icon.Default.prototype._getIconUrl;
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-      iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-      shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-    });
-  }
-};
 
 interface Stadium {
   id: string;
@@ -57,6 +44,17 @@ export default function GlobalStadiumMap({ stadiums }: GlobalStadiumMapProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const fixLeafletIcon = async () => {
+      const L = (await import("leaflet")).default;
+      // @ts-ignore
+      delete L.Icon.Default.prototype._getIconUrl;
+      L.Icon.Default.mergeOptions({
+        iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+        iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+        shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+      });
+    };
+
     fixLeafletIcon();
     setMounted(true);
   }, []);

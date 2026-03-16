@@ -10,7 +10,19 @@ import { Search, Filter, MapPin, Trophy, Users, LayoutGrid, Map as MapIcon, X } 
 import { getStadiums } from "@/api";
 import { getOptimizedImageUrl } from "@/lib/cloudinary";
 import { motion, AnimatePresence } from "framer-motion";
-import GlobalStadiumMap from "@/components/stadium/GlobalStadiumMap";
+import dynamic from "next/dynamic";
+
+const GlobalStadiumMap = dynamic(() => import("@/components/stadium/GlobalStadiumMap"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-plum/5 rounded-3xl animate-pulse flex items-center justify-center">
+      <div className="text-center">
+        <MapPin size={32} className="text-rose/20 mx-auto mb-4 animate-bounce" />
+        <span className="text-plum/30 font-sans text-xs tracking-[0.3em] uppercase block">Locating Arenas...</span>
+      </div>
+    </div>
+  ),
+});
 
 export default function SearchPage() {
   const [stadiums, setStadiums] = useState<any[]>([]);
