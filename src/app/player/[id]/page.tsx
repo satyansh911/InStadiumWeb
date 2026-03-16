@@ -1,4 +1,7 @@
 import { notFound } from "next/navigation";
+import { prisma } from "@/lib/prisma";
+export const dynamic = 'force-dynamic';
+
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -8,11 +11,6 @@ import PlayerStory from "@/components/player/PlayerStory";
 import PlayerTimeline from "@/components/player/PlayerTimeline";
 import PlayerStadiums from "@/components/player/PlayerStadiums";
 import ScrollReveal from "@/components/ScrollReveal";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
-
-export const revalidate = 60;
 
 async function getPlayer(id: string) {
   // Use raw query to bypass potential Prisma client caching/mapping issues

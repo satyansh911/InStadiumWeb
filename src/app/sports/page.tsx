@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import SportsClient from "./SportsClient";
 
+export const dynamic = 'force-dynamic';
+
 export default async function SportsPage() {
   const sports = await prisma.sport.findMany();
   const stadiums = await prisma.stadium.findMany({

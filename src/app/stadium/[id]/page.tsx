@@ -1,4 +1,6 @@
 import { prisma } from "@/lib/prisma";
+export const dynamic = 'force-dynamic';
+
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -11,7 +13,6 @@ import NearbyStadiums from "@/components/stadium/NearbyStadiums";
 import ChatbotWidget from "@/components/stadium/ChatbotWidget";
 import StadiumMap from "@/components/stadium/StadiumMap";
 
-export const revalidate = 60;
 
 export default async function StadiumPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

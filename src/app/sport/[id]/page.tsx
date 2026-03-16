@@ -1,4 +1,6 @@
 import { prisma } from "@/lib/prisma";
+export const dynamic = 'force-dynamic';
+
 import { notFound } from "next/navigation";
 import SportPageClient from "./SportPageClient";
 import { ADDITIONAL_SPORTS_DATA } from "@/lib/sports-data";
@@ -45,13 +47,3 @@ export default async function SportPage({ params }: { params: Promise<{ id: stri
   );
 }
 
-// Generate static params for faster loading
-export async function generateStaticParams() {
-  const sports = await prisma.sport.findMany({
-    select: { id: true }
-  });
-
-  return sports.map((sport) => ({
-    id: sport.id,
-  }));
-}
