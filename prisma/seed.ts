@@ -93,23 +93,24 @@ async function main() {
           year: 2011, 
           title: "World Cup Glory",
           event: "The iconic MS Dhoni finish. India lifted the World Cup after 28 years on home soil.",
-          videoUrl: "https://www.youtube.com/watch?v=N4y2Wk5C3-E",
-          thumbnail: "https://img.youtube.com/vi/N4y2Wk5C3-E/maxresdefault.jpg",
+          videoUrl: "https://www.youtube.com/watch?v=R0alThHNb0Y",
+          thumbnail: "https://img.youtube.com/vi/R0alThHNb0Y/hqdefault.jpg",
           type: "match"
         },
         { 
           year: 2013, 
           title: "Sachin's Farewell",
           event: "The Master Blaster, Sachin Tendulkar, played his final international innings, leaving a nation in tears.",
-          videoUrl: "https://www.youtube.com/watch?v=28eSrkY6f2A",
-          thumbnail: "https://img.youtube.com/vi/28eSrkY6f2A/maxresdefault.jpg",
+          videoUrl: "https://www.youtube.com/watch?v=id9_Lh5tNNk",
+          thumbnail: "https://img.youtube.com/vi/id9_Lh5tNNk/hqdefault.jpg",
           type: "milestone"
         },
         {
           year: 2023,
           title: "Kohli's 50th Century",
           event: "Virat Kohli broke Sachin's record for most ODI centuries during the World Cup semi-final.",
-          videoUrl: "https://www.youtube.com/watch?v=M7WzVv8x8XU",
+          videoUrl: "https://www.youtube.com/shorts/2ejZZf2_tdM",
+          thumbnail: "https://img.youtube.com/vi/2ejZZf2_tdM/hqdefault.jpg",
           type: "match"
         }
       ],
@@ -145,23 +146,24 @@ async function main() {
           year: 2011, 
           title: "World Cup Glory",
           event: "The iconic MS Dhoni finish. India lifted the World Cup after 28 years on home soil.",
-          videoUrl: "https://www.youtube.com/watch?v=N4y2Wk5C3-E",
-          thumbnail: "https://img.youtube.com/vi/N4y2Wk5C3-E/maxresdefault.jpg",
+          videoUrl: "https://www.youtube.com/watch?v=R0alThHNb0Y",
+          thumbnail: "https://img.youtube.com/vi/R0alThHNb0Y/hqdefault.jpg",
           type: "match"
         },
         { 
           year: 2013, 
           title: "Sachin's Farewell",
           event: "The Master Blaster, Sachin Tendulkar, played his final international innings, leaving a nation in tears.",
-          videoUrl: "https://www.youtube.com/watch?v=28eSrkY6f2A",
-          thumbnail: "https://img.youtube.com/vi/28eSrkY6f2A/maxresdefault.jpg",
+          videoUrl: "https://www.youtube.com/watch?v=id9_Lh5tNNk",
+          thumbnail: "https://img.youtube.com/vi/id9_Lh5tNNk/hqdefault.jpg",
           type: "milestone"
         },
         {
           year: 2023,
           title: "Kohli's 50th Century",
           event: "Virat Kohli broke Sachin's record for most ODI centuries during the World Cup semi-final.",
-          videoUrl: "https://www.youtube.com/watch?v=M7WzVv8x8XU",
+          videoUrl: "https://www.youtube.com/shorts/2ejZZf2_tdM",
+          thumbnail: "https://img.youtube.com/vi/2ejZZf2_tdM/hqdefault.jpg",
           type: "match"
         }
       ],

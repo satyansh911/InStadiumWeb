@@ -7,6 +7,7 @@ import { getOptimizedImageUrl } from "@/lib/cloudinary";
 
 export default function StadiumHero({ stadium }: { stadium: any }) {
   const heroImage = stadium.heroImage || stadium.image || "https://images.unsplash.com/photo-1540744158800-4785387f481c?q=80";
+  const isLocalHeroImage = typeof heroImage === "string" && heroImage.startsWith("/");
 
   return (
     <section className="relative w-full h-[85vh] flex items-center justify-center overflow-hidden">
@@ -18,6 +19,7 @@ export default function StadiumHero({ stadium }: { stadium: any }) {
           fill 
           className="object-cover"
           priority
+          unoptimized={isLocalHeroImage}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-plum/60 via-plum/40 to-blush z-[1]" />
         <div className="absolute inset-0 bg-black/20 z-[1]" />

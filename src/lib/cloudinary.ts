@@ -6,7 +6,7 @@ export function getOptimizedImageUrl(publicId: string, options: { width?: number
   const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
   
   // Default fallback image if no publicId is provided
-  const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1540744158800-4785387f481c?q=80";
+  const FALLBACK_IMAGE = "/images/stadiums/wankhedestadium.jpg";
 
   if (!publicId) return FALLBACK_IMAGE;
   if (!cloudName) return publicId;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type SyntheticEvent } from "react";
 import ScrollReveal from "../ScrollReveal";
 import { Play } from "lucide-react";
 import VideoModal from "./VideoModal";
@@ -8,6 +8,20 @@ import { motion } from "framer-motion";
 
 export default function TimelineSection({ timeline }: { timeline: any[] }) {
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
+
+  const handleThumbnailError = (event: SyntheticEvent<HTMLImageElement>) => {
+    const image = event.currentTarget;
+    const source = image.src;
+
+    if (source.includes('/maxresdefault.jpg')) {
+      image.src = source.replace('/maxresdefault.jpg', '/hqdefault.jpg');
+      return;
+    }
+
+    if (source.includes('/hqdefault.jpg')) {
+      image.src = source.replace('/hqdefault.jpg', '/mqdefault.jpg');
+    }
+  };
 
   if (!timeline || timeline.length === 0) return null;
 
@@ -77,6 +91,7 @@ export default function TimelineSection({ timeline }: { timeline: any[] }) {
                         <img 
                           src={item.thumbnail} 
                           alt={item.title}
+                          onError={handleThumbnailError}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
                         />
                         <div className="absolute inset-0 bg-plum/40 group-hover:bg-plum/20 transition-colors duration-500 flex items-center justify-center">
