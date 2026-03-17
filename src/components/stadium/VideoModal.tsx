@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 import { useEffect } from "react";
 
 interface VideoModalProps {
@@ -34,7 +34,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }: VideoMo
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-8">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -49,14 +49,25 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }: VideoMo
             exit={{ scale: 0.9, opacity: 0 }}
             className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10"
           >
-            <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent z-10">
+            <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center bg-linear-to-b from-black/80 to-transparent z-10">
               <h3 className="text-white font-serif text-xl md:text-2xl">{title}</h3>
-              <button
-                onClick={onClose}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
-              >
-                <X size={24} />
-              </button>
+              <div className="flex items-center gap-3">
+                <a
+                  href={videoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="h-10 px-4 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xs tracking-wide uppercase transition-colors"
+                >
+                  Open
+                  <ExternalLink size={14} className="ml-2" />
+                </a>
+                <button
+                  onClick={onClose}
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
             </div>
 
             <iframe

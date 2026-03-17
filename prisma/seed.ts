@@ -190,14 +190,14 @@ async function main() {
           year: 2022, 
           title: "IPL Grand Finale",
           event: "Hosted its first IPL Final with a record crowd of over 100,000 people.",
-          videoUrl: "https://www.youtube.com/watch?v=Xh0p9-Y0I4U",
+          videoUrl: "https://www.youtube.com/watch?v=VEcmXpIEN2Y",
           type: "match"
         },
         { 
           year: 2023, 
           title: "World Cup Final",
           event: "The grand finale of the ICC Men's Cricket World Cup 2023 between India and Australia.",
-          videoUrl: "https://www.youtube.com/watch?v=o0vVp_O0V28",
+          videoUrl: "https://www.youtube.com/shorts/OBEgDfJXP24",
           type: "match"
         }
       ],
@@ -226,14 +226,14 @@ async function main() {
           year: 2022, 
           title: "IPL Grand Finale",
           event: "Hosted its first IPL Final with a record crowd of over 100,000 people.",
-          videoUrl: "https://www.youtube.com/watch?v=Xh0p9-Y0I4U",
+          videoUrl: "https://www.youtube.com/watch?v=VEcmXpIEN2Y",
           type: "match"
         },
         { 
           year: 2023, 
           title: "World Cup Final",
           event: "The grand finale of the ICC Men's Cricket World Cup 2023 between India and Australia.",
-          videoUrl: "https://www.youtube.com/watch?v=o0vVp_O0V28",
+          videoUrl: "https://www.youtube.com/shorts/OBEgDfJXP24",
           type: "match"
         }
       ],
@@ -257,14 +257,16 @@ async function main() {
           year: 2011, 
           title: "Lionel Messi in Kolkata",
           event: "The legendary Lionel Messi led Argentina against Venezuela in a historic friendly match.",
-          videoUrl: "https://www.youtube.com/watch?v=X_pDkUe2Ams",
+          videoUrl: "https://www.youtube.com/watch?v=QzuTXIRUcbw",
+          thumbnail: "https://img.youtube.com/vi/QzuTXIRUcbw/hqdefault.jpg",
           type: "match"
         },
         { 
           year: 2017, 
           title: "FIFA U-17 World Cup Final",
           event: "Hosted the final between England and Spain, setting attendance records for a youth tournament.",
-          videoUrl: "https://www.youtube.com/watch?v=KzYIdcskv0M",
+          videoUrl: "https://www.youtube.com/watch?v=sRxsW91x0Rg",
+          thumbnail: "https://img.youtube.com/vi/sRxsW91x0Rg/hqdefault.jpg",
           type: "match"
         }
       ],
@@ -283,8 +285,28 @@ async function main() {
         { url: '/images/stadiums/saltlakestadium.jpg', caption: 'Football Pitch' }
       ],
       historyTimeline: [
-        { year: 1984, event: 'Opening Ceremony' },
-        { year: 2017, event: 'Hosted FIFA U-17 World Cup Final' }
+        {
+          year: 1984,
+          title: 'The Opening',
+          event: 'The stadium was inaugurated, providing India with a world-class multi-sport venue.',
+          type: 'milestone'
+        },
+        {
+          year: 2011,
+          title: 'Lionel Messi in Kolkata',
+          event: 'The legendary Lionel Messi led Argentina against Venezuela in a historic friendly match.',
+          videoUrl: 'https://www.youtube.com/watch?v=QzuTXIRUcbw',
+          thumbnail: 'https://img.youtube.com/vi/QzuTXIRUcbw/hqdefault.jpg',
+          type: 'match'
+        },
+        {
+          year: 2017,
+          title: 'FIFA U-17 World Cup Final',
+          event: 'Hosted the final between England and Spain, setting attendance records for a youth tournament.',
+          videoUrl: 'https://www.youtube.com/watch?v=sRxsW91x0Rg',
+          thumbnail: 'https://img.youtube.com/vi/sRxsW91x0Rg/hqdefault.jpg',
+          type: 'match'
+        }
       ],
       sportsPlayed: {
         connect: [{ id: 'football' }]
