@@ -316,7 +316,42 @@ async function main() {
 
   const kalinga = await prisma.stadium.upsert({
     where: { id: 'kalinga' },
-    update: {},
+    update: {
+      description: "A world-class hockey venue in Bhubaneswar that helped define India's modern hockey resurgence.",
+      latitude: 20.2961,
+      longitude: 85.8245,
+      historyTimeline: [
+        {
+          year: 1978,
+          title: 'Foundation Era',
+          event: 'Kalinga Stadium began as a multi-sport venue and later evolved into India\'s hockey capital.',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2018,
+          title: 'Hockey World Cup Host',
+          event: 'Hosted the Men\'s Hockey World Cup and delivered a world-class fan atmosphere.',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          type: 'match'
+        },
+        {
+          year: 2023,
+          title: 'World Cup Returns',
+          event: 'Again hosted major Hockey World Cup fixtures, strengthening its status as a global hockey venue.',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          type: 'match'
+        }
+      ],
+      tournaments: [
+        { name: 'Men\'s Hockey World Cup', year: 2018, winner: 'Belgium' },
+        { name: 'Men\'s Hockey World Cup', year: 2023, winner: 'Germany' }
+      ],
+      upcomingMatches: [
+        { teams: 'India vs Australia', date: '2026-06-14', tournament: 'FIH Pro League' },
+        { teams: 'Odisha Warriors vs Bengaluru Blades', date: '2026-09-02', tournament: 'Hockey India League' }
+      ]
+    },
     create: {
       id: 'kalinga',
       name: 'Kalinga Stadium',
@@ -324,9 +359,42 @@ async function main() {
       state: 'Odisha',
       capacity: 16000,
       builtYear: 1978,
-      description: "A world-class hockey stadium that hosted the Men's Hockey World Cup twice.",
+      description: "A world-class hockey venue in Bhubaneswar that helped define India's modern hockey resurgence.",
+      latitude: 20.2961,
+      longitude: 85.8245,
       galleryImages: [
         { url: '/images/stadiums/kalingastadium.jpg', caption: 'Stadium View' }
+      ],
+      historyTimeline: [
+        {
+          year: 1978,
+          title: 'Foundation Era',
+          event: 'Kalinga Stadium began as a multi-sport venue and later evolved into India\'s hockey capital.',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2018,
+          title: 'Hockey World Cup Host',
+          event: 'Hosted the Men\'s Hockey World Cup and delivered a world-class fan atmosphere.',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          type: 'match'
+        },
+        {
+          year: 2023,
+          title: 'World Cup Returns',
+          event: 'Again hosted major Hockey World Cup fixtures, strengthening its status as a global hockey venue.',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          type: 'match'
+        }
+      ],
+      tournaments: [
+        { name: 'Men\'s Hockey World Cup', year: 2018, winner: 'Belgium' },
+        { name: 'Men\'s Hockey World Cup', year: 2023, winner: 'Germany' }
+      ],
+      upcomingMatches: [
+        { teams: 'India vs Australia', date: '2026-06-14', tournament: 'FIH Pro League' },
+        { teams: 'Odisha Warriors vs Bengaluru Blades', date: '2026-09-02', tournament: 'Hockey India League' }
       ],
       sportsPlayed: {
         connect: [{ id: 'hockey' }]
@@ -336,7 +404,42 @@ async function main() {
 
   const prakashPadukone = await prisma.stadium.upsert({
     where: { id: 'prakash-padukone' },
-    update: {},
+    update: {
+      description: 'A premier high-performance badminton academy that has produced and hosted elite Indian badminton talent.',
+      latitude: 13.0086,
+      longitude: 77.5931,
+      historyTimeline: [
+        {
+          year: 1994,
+          title: 'Academy Established',
+          event: 'Prakash Padukone Badminton Academy was founded to build India\'s next generation of champions.',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2010,
+          title: 'National Elite Hub',
+          event: 'Became a major training base for top shuttlers competing at global events.',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2022,
+          title: 'Premier Domestic Events',
+          event: 'Hosted high-intensity national circuit matches featuring rising Indian stars.',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          type: 'match'
+        }
+      ],
+      tournaments: [
+        { name: 'Senior National Ranking Series', year: 2022, winner: 'Multiple Champions' },
+        { name: 'Junior National Camp Showcase', year: 2024, winner: 'Academy Prospects' }
+      ],
+      upcomingMatches: [
+        { teams: 'Karnataka Smashers vs Hyderabad Racquets', date: '2026-07-08', tournament: 'Indian Badminton League' },
+        { teams: 'Elite Training Exhibition', date: '2026-08-19', tournament: 'PPBA Invitational' }
+      ]
+    },
     create: {
       id: 'prakash-padukone',
       name: 'Prakash Padukone Badminton Academy',
@@ -344,9 +447,42 @@ async function main() {
       state: 'Karnataka',
       capacity: 2000,
       builtYear: 1994,
-      description: "A premier training center and venue for national badminton tournaments.",
+      description: 'A premier high-performance badminton academy that has produced and hosted elite Indian badminton talent.',
+      latitude: 13.0086,
+      longitude: 77.5931,
       galleryImages: [
         { url: '/images/stadiums/prakashpadukonebadmintonacademy.jpg', caption: 'Academy View' }
+      ],
+      historyTimeline: [
+        {
+          year: 1994,
+          title: 'Academy Established',
+          event: 'Prakash Padukone Badminton Academy was founded to build India\'s next generation of champions.',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2010,
+          title: 'National Elite Hub',
+          event: 'Became a major training base for top shuttlers competing at global events.',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2022,
+          title: 'Premier Domestic Events',
+          event: 'Hosted high-intensity national circuit matches featuring rising Indian stars.',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          type: 'match'
+        }
+      ],
+      tournaments: [
+        { name: 'Senior National Ranking Series', year: 2022, winner: 'Multiple Champions' },
+        { name: 'Junior National Camp Showcase', year: 2024, winner: 'Academy Prospects' }
+      ],
+      upcomingMatches: [
+        { teams: 'Karnataka Smashers vs Hyderabad Racquets', date: '2026-07-08', tournament: 'Indian Badminton League' },
+        { teams: 'Elite Training Exhibition', date: '2026-08-19', tournament: 'PPBA Invitational' }
       ],
       sportsPlayed: {
         connect: [{ id: 'badminton' }]
@@ -356,7 +492,42 @@ async function main() {
 
   const rkKhanna = await prisma.stadium.upsert({
     where: { id: 'rk-khanna' },
-    update: {},
+    update: {
+      description: 'India\'s premier tennis venue in New Delhi, known for Davis Cup ties and major ATP/WTA-level competition windows.',
+      latitude: 28.5919,
+      longitude: 77.2243,
+      historyTimeline: [
+        {
+          year: 1982,
+          title: 'National Tennis Landmark',
+          event: 'R.K. Khanna Tennis Stadium emerged as a flagship destination for Indian tennis.',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2010,
+          title: 'Commonwealth Spotlight',
+          event: 'Hosted high-profile tennis events during India\'s global sporting calendar.',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          type: 'match'
+        },
+        {
+          year: 2023,
+          title: 'Davis Cup Nights',
+          event: 'Welcomed packed crowds for national-team tennis ties in a high-pressure atmosphere.',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          type: 'match'
+        }
+      ],
+      tournaments: [
+        { name: 'Davis Cup', year: 2023, winner: 'International Tie Rotation' },
+        { name: 'Delhi Open', year: 2024, winner: 'Tour Champion' }
+      ],
+      upcomingMatches: [
+        { teams: 'India vs Japan', date: '2026-09-12', tournament: 'Davis Cup' },
+        { teams: 'Delhi Aces vs Mumbai Baseliners', date: '2026-10-03', tournament: 'Indian Tennis League' }
+      ]
+    },
     create: {
       id: 'rk-khanna',
       name: 'R.K. Khanna Tennis Stadium',
@@ -364,9 +535,42 @@ async function main() {
       state: 'Delhi',
       capacity: 5014,
       builtYear: 1982,
-      description: "The premier tennis venue in India, having hosted numerous Davis Cup ties.",
+      description: 'India\'s premier tennis venue in New Delhi, known for Davis Cup ties and major ATP/WTA-level competition windows.',
+      latitude: 28.5919,
+      longitude: 77.2243,
       galleryImages: [
         { url: '/images/stadiums/rkkhannastadium.jpg', caption: 'Stadium View' }
+      ],
+      historyTimeline: [
+        {
+          year: 1982,
+          title: 'National Tennis Landmark',
+          event: 'R.K. Khanna Tennis Stadium emerged as a flagship destination for Indian tennis.',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          type: 'milestone'
+        },
+        {
+          year: 2010,
+          title: 'Commonwealth Spotlight',
+          event: 'Hosted high-profile tennis events during India\'s global sporting calendar.',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          type: 'match'
+        },
+        {
+          year: 2023,
+          title: 'Davis Cup Nights',
+          event: 'Welcomed packed crowds for national-team tennis ties in a high-pressure atmosphere.',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          type: 'match'
+        }
+      ],
+      tournaments: [
+        { name: 'Davis Cup', year: 2023, winner: 'International Tie Rotation' },
+        { name: 'Delhi Open', year: 2024, winner: 'Tour Champion' }
+      ],
+      upcomingMatches: [
+        { teams: 'India vs Japan', date: '2026-09-12', tournament: 'Davis Cup' },
+        { teams: 'Delhi Aces vs Mumbai Baseliners', date: '2026-10-03', tournament: 'Indian Tennis League' }
       ],
       sportsPlayed: {
         connect: [{ id: 'tennis' }]
