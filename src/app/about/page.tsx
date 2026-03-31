@@ -20,14 +20,14 @@ export default function AboutPage() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <ScrollReveal direction="left" className="relative group overflow-hidden rounded-[2.5rem]">
-            <div className="aspect-[4/5] relative">
+            <div className="aspect-4/5 relative">
               <Image 
                 src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80" 
                 alt="Elite Stadium Atmosphere"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-plum/40 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-plum/40 to-transparent" />
             </div>
           </ScrollReveal>
 
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
       {/* Philosophy Section */}
       <section className="py-48 px-6 bg-blush relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40rem] font-serif italic text-rose/[0.03] select-none pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40rem] font-serif italic text-rose/3 select-none pointer-events-none">
           History
         </div>
         <ScrollReveal className="max-w-4xl mx-auto text-center relative z-10">
@@ -124,16 +124,16 @@ export default function AboutPage() {
               {
                 name: "Satyansh Singh",
                 role: "Founding Creator",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80",
+                image: "/images/team/satyanshsingh.jpg",
               },
               {
                 name: "Prakshit Suthar",
                 role: "Founding Creator",
-                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80",
+                image: "/images/team/prakshitsuthar.jpeg",
               },
             ].map((member, index) => (
                <ScrollReveal key={member.name} delay={(index % 4) as 0 | 1 | 2 | 3} className="group cursor-default">
-                 <div className="relative w-full aspect-[4/5] mb-8 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-3xl overflow-hidden border border-plum/5">
+                 <div className="relative w-full aspect-4/5 mb-8 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-3xl overflow-hidden border border-plum/5">
                     <Image 
                       src={member.image}
                       alt={member.name}
@@ -149,6 +149,31 @@ export default function AboutPage() {
                </ScrollReveal>
             ))}
          </div>
+      </section>
+
+      <section className="pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <ScrollReveal className="mb-16">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-rose font-bold mb-4 block">Mentor</span>
+          <h2 className="text-4xl md:text-5xl font-light text-plum italic">Faculty <span className="not-italic font-normal">Guidance</span></h2>
+        </ScrollReveal>
+
+        <ScrollReveal className="group cursor-default max-w-md">
+          <div className="relative w-full aspect-4/5 mb-8 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-3xl overflow-hidden border border-plum/5">
+            <Image
+              src="/images/team/facultyphoto.jpg"
+              alt="Faculty Mentor"
+              fill
+              unoptimized
+              className="object-cover transition-all duration-700 scale-110 group-hover:scale-100"
+            />
+          </div>
+          <div className="space-y-1">
+            <h3 className="font-sans text-[11px] tracking-[0.2em] uppercase text-plum/40 group-hover:text-rose transition-colors duration-300 font-bold">Faculty Mentor</h3>
+            <p className="text-3xl font-light text-plum italic">Dr. Mukesh Mann</p>
+            <p className="text-sm font-sans text-plum/60">Head Of Department</p>
+            <p className="text-sm font-sans text-plum/60">Information Technology</p>
+          </div>
+        </ScrollReveal>
       </section>
 
       <Footer />
