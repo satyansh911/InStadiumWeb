@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     template: "%s | Instadium"
   },
   description: "Explore world-class sports stadiums across India. Scan QR codes for interactive guides or discover stadiums by sports.",
+  icons: {
+    icon: "/Instadiumlogo.png",
+    shortcut: "/Instadiumlogo.png",
+    apple: "/Instadiumlogo.png",
+  },
   keywords: ["stadium guide", "indian stadiums", "sports architecture", "cricket stadiums", "football stadiums", "interactive stadium guide", "instadium"],
   openGraph: {
     type: "website",
