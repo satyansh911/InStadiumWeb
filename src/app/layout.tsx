@@ -15,9 +15,10 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://instadium.vercel.app"),
   title: {
-    default: "Instadium | Indian Sports Stadium Guide",
-    template: "%s | Instadium"
+    default: "InStadium | Indian Sports Stadium Guide",
+    template: "%s | InStadium"
   },
   description: "Explore world-class sports stadiums across India. Scan QR codes for interactive guides or discover stadiums by sports.",
   icons: {
@@ -30,23 +31,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://instadium.app",
-    siteName: "Instadium",
-    title: "Instadium | Interactive Indian Sports Stadium Guide",
+    siteName: "InStadium",
+    title: "InStadium | Interactive Indian Sports Stadium Guide",
     description: "Your smart companion for exploring sports stadiums in India.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1540744158800-4785387f481c?q=80",
-        width: 1200,
-        height: 630,
-        alt: "Instadium Preview"
+        url: "/Instadiumlogo.png",
+        width: 512,
+        height: 512,
+        alt: "InStadium"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Instadium | Indian Sports Stadium Guide",
+    title: "InStadium | Indian Sports Stadium Guide",
     description: "Interactive guides and discovery for sports stadiums in India.",
-    images: ["https://images.unsplash.com/photo-1540744158800-4785387f481c?q=80"],
+    images: ["/Instadiumlogo.png"],
   },
   robots: {
     index: true,
