@@ -11,27 +11,35 @@ import Rulebook from "@/components/stadium/Rulebook";
 import { getOptimizedImageUrl } from "@/lib/cloudinary";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SPORTS_DATA: Record<string, { description: string, rulebook: any[] }> = {
+const SPORTS_DATA: Record<string, { description: string, rulebook: any[], fullVideoGuide?: { url: string; channelName: string } }> = {
   Cricket: {
     description: "Known as the 'Gentleman's Game', cricket is a multi-format sport with a rich heritage in India. From the traditional Test matches to the high-octane T20 IPL, it's more than just a sport; it's an emotion.",
     rulebook: [
       { 
         title: "The Pitch", 
-        content: "A central 22-yard strip where the main action happens. It's carefully curated to influence the ball's movement—some favor fast bowlers with bounce, while others assist spinners as the match progresses." 
+        content: "A central 22-yard strip where the main action happens. It's carefully curated to influence the ball's movement—some favor fast bowlers with bounce, while others assist spinners as the match progresses.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395348/The_Pitch_wlpzie.mp4"
       },
       { 
         title: "The Over", 
-        content: "A set of six legal deliveries bowled by a single player from one end of the pitch. After an over, the bowling end changes, and a different player takes over, ensuring a strategic rotation of pace and guile." 
+        content: "A set of six legal deliveries bowled by a single player from one end of the pitch. After an over, the bowling end changes, and a different player takes over, ensuring a strategic rotation of pace and guile.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395338/The_Over_mfjbuh.mp4"
       },
       { 
         title: "Wickets", 
-        content: "The primary objective for bowlers. There are 10 ways to get a batsman out, including being bowled (hitting the stumps), caught, Leg Before Wicket (LBW), or run out while trying to complete a run." 
+        content: "The primary objective for bowlers. There are 10 ways to get a batsman out, including being bowled (hitting the stumps), caught, Leg Before Wicket (LBW), or run out while trying to complete a run.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395337/Wickets_y5ts27.mp4"
       },
       { 
         title: "Scoring Runs", 
-        content: "Batsmen score runs by hitting the ball and running between the wickets. Hitting the ball to the boundary scores 4 runs, while clearing the rope on the full earns a maximum of 6 runs." 
+        content: "Batsmen score runs by hitting the ball and running between the wickets. Hitting the ball to the boundary scores 4 runs, while clearing the rope on the full earns a maximum of 6 runs.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395328/Scoring_Runs_l4pi8a.mp4"
       }
-    ]
+    ],
+    fullVideoGuide: {
+      url: "https://www.youtube.com/watch?v=VwII4y5vpyU",
+      channelName: "Nino's Corner"
+    }
   },
   Football: {
     description: "The world's most popular sport, football is a game of skill, strategy, and endurance. In India, it's witnessing a massive resurgence with the Indian Super League and a growing grassroots movement.",
@@ -240,7 +248,11 @@ export default function SportsClient({ initialSports, initialStadiums }: { initi
                 </div>
 
                 <div className="lg:col-span-8">
-                  <Rulebook sportName={selectedSportName} rules={activeSportData.rulebook} />
+                  <Rulebook 
+                    sportName={selectedSportName} 
+                    rules={activeSportData.rulebook} 
+                    fullVideoGuide={(activeSportData as any).fullVideoGuide}
+                  />
                 </div>
               </div>
 

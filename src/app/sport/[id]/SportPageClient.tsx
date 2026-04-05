@@ -41,7 +41,11 @@ export default function SportPageClient({ sport, metadata }: SportPageClientProp
           </ScrollReveal>
           
           <div className="lg:max-w-5xl mx-auto">
-            <Rulebook sportName={metadata.name} rules={metadata.rulebook} />
+            <Rulebook 
+              sportName={metadata.name} 
+              rules={metadata.rulebook} 
+              fullVideoGuide={metadata.fullVideoGuide}
+            />
           </div>
         </div>
       </section>

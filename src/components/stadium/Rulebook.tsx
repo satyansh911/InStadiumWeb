@@ -2,20 +2,27 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, Play, Info, Trophy } from "lucide-react";
+import { ChevronRight, Play, Info, Trophy, Youtube } from "lucide-react";
+import VideoModal from "./VideoModal";
 
 interface RuleSection {
   title: string;
   content: string;
+  videoUrl?: string;
 }
 
 interface RulebookProps {
   sportName: string;
   rules: RuleSection[];
+  fullVideoGuide?: {
+    url: string;
+    channelName: string;
+  };
 }
 
-export default function Rulebook({ sportName, rules }: RulebookProps) {
+export default function Rulebook({ sportName, rules, fullVideoGuide }: RulebookProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <div className="bg-plum text-blush rounded-3xl overflow-hidden shadow-2xl border border-white/5 h-full">
@@ -65,6 +72,22 @@ export default function Rulebook({ sportName, rules }: RulebookProps) {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="flex flex-col h-full"
               >
+                {rules[activeIndex].videoUrl && (
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8 border border-white/10 bg-black/20 shadow-2xl">
+                    <video
+                      src={rules[activeIndex].videoUrl}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover pointer-events-none scale-[1.1] origin-top-left"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-rose text-[8px] font-sans tracking-[0.2em] uppercase text-blush shadow-lg border border-white/10">
+                      Visual Guide
+                    </div>
+                  </div>
+                )}
                 <h4 className="text-2xl font-normal mb-6 text-rose">
                   {rules[activeIndex].title}
                 </h4>
@@ -73,7 +96,6 @@ export default function Rulebook({ sportName, rules }: RulebookProps) {
                     <p key={i}>{paragraph}</p>
                   ))}
                 </div>
-                
                 <div className="mt-auto pt-10 flex items-center gap-8 border-t border-white/10">
                   <div className="flex flex-col gap-1">
                     <span className="font-sans text-[9px] tracking-[0.2em] uppercase opacity-40">Skill Level</span>
@@ -83,16 +105,36 @@ export default function Rulebook({ sportName, rules }: RulebookProps) {
                        ))}
                     </div>
                   </div>
-                  <button className="flex items-center gap-2 group ml-auto font-sans text-[10px] tracking-[0.2em] uppercase text-rose hover:text-blush transition-colors">
-                    <Play size={12} className="fill-current" />
-                    <span className="border-b border-transparent group-hover:border-current">Watch Video Guide</span>
-                  </button>
+                  
+                  {fullVideoGuide && (
+                    <div className="ml-auto flex flex-col items-end gap-2">
+                      <button 
+                        onClick={() => setIsVideoModalOpen(true)}
+                        className="flex items-center gap-2 group font-sans text-[10px] tracking-[0.2em] uppercase text-rose hover:text-blush transition-colors"
+                      >
+                        <Play size={12} className="fill-current" />
+                        <span className="border-b border-rose group-hover:border-blush transition-colors">Full Video Guide</span>
+                      </button>
+                      <span className="font-sans text-[8px] tracking-widest uppercase opacity-30">
+                        Courtesy: {fullVideoGuide.channelName}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
       </div>
+
+      {fullVideoGuide && (
+        <VideoModal 
+          isOpen={isVideoModalOpen}
+          onClose={() => setIsVideoModalOpen(false)}
+          videoUrl={fullVideoGuide.url}
+          title={`${sportName} - Full Video Guide`}
+        />
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 export interface Rule {
   title: string;
   content: string;
+  videoUrl?: string;
 }
 
 export interface TimelineEvent {
@@ -17,6 +18,10 @@ export interface SportMetadata {
   history: TimelineEvent[];
   rulebook: Rule[];
   tags: string[];
+  fullVideoGuide?: {
+    url: string;
+    channelName: string;
+  };
 }
 
 export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
@@ -34,11 +39,31 @@ export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
       { year: "2011", event: "World Cup Glory at Home", description: "MS Dhoni's iconic six sealed India's second World Cup title in Mumbai." }
     ],
     rulebook: [
-      { title: "The Playing Field", content: "Played on an oval field with a 22-yard pitch at its center. The boundary defines the limit of the playing area." },
-      { title: "Scoring System", content: "Runs are scored by running between wickets or hitting boundaries (4s and 6s)." },
-      { title: "Bowling & Fielding", content: "Six balls make an over. Fielders aim to stop runs and take wickets through catches, run-outs, or bowling out the batsman." },
-      { title: "The Umpire's Call", content: "Two on-field umpires make decisions, supported by a TV umpire for complex reviews (DRS)." }
-    ]
+      { 
+        title: "The Pitch", 
+        content: "A central 22-yard strip where the main action happens. It's carefully curated to influence the ball's movement—some favor fast bowlers with bounce, while others assist spinners as the match progresses.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395348/The_Pitch_wlpzie.mp4"
+      },
+      { 
+        title: "The Over", 
+        content: "A set of six legal deliveries bowled by a single player from one end of the pitch. After an over, the bowling end changes, and a different player takes over, ensuring a strategic rotation of pace and guile.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395338/The_Over_mfjbuh.mp4"
+      },
+      { 
+        title: "Wickets", 
+        content: "The primary objective for bowlers. There are 10 ways to get a batsman out, including being bowled (hitting the stumps), caught, Leg Before Wicket (LBW), or run out while trying to complete a run.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395337/Wickets_y5ts27.mp4"
+      },
+      { 
+        title: "Scoring Runs", 
+        content: "Batsmen score runs by hitting the ball and running between the wickets. Hitting the ball to the boundary scores 4 runs, while clearing the rope on the full earns a maximum of 6 runs.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775395328/Scoring_Runs_l4pi8a.mp4"
+      }
+    ],
+    fullVideoGuide: {
+      url: "https://www.youtube.com/watch?v=VwII4y5vpyU",
+      channelName: "Nino's Corner"
+    }
   },
   football: {
     id: "football",
