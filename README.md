@@ -125,38 +125,38 @@ Use this for onboarding and navigation across the codebase.
 
 ```mermaid
 flowchart TB
-      root[src/app]
+   root["src/app"]
 
-      root --> public[Public Pages]
-      root --> dynamic[Dynamic Detail Pages]
-      root --> admin[Admin Pages]
-      root --> apis[API Routes]
+   root --> public["Public Pages"]
+   root --> dynamic["Dynamic Detail Pages"]
+   root --> admin["Admin Pages"]
+   root --> apis["API Routes"]
 
-      public --> p1[/]
-      public --> p2[/sports]
-      public --> p3[/stadiums]
-      public --> p4[/search]
-      public --> p5[/press]
-      public --> p6[/inquiry]
+   public --> p1["/"]
+   public --> p2["/sports"]
+   public --> p3["/stadiums"]
+   public --> p4["/search"]
+   public --> p5["/press"]
+   public --> p6["/inquiry"]
 
-      dynamic --> d1[/stadium/[id]]
-      dynamic --> d2[/sport/[id]]
-      dynamic --> d3[/player/[id]]
-      dynamic --> d4[/portfolio/[id]]
-      dynamic --> d5[/qr/[code]]
+   dynamic --> d1["/stadium/:id"]
+   dynamic --> d2["/sport/:id"]
+   dynamic --> d3["/player/:id"]
+   dynamic --> d4["/portfolio/:id"]
+   dynamic --> d5["/qr/:code"]
 
-      admin --> a1[/admin/login]
-      admin --> a2[/admin/dashboard]
+   admin --> a1["/admin/login"]
+   admin --> a2["/admin/dashboard"]
 
-      apis --> r1[/api/stadiums]
-      apis --> r2[/api/sports]
-      apis --> r3[/api/players]
-      apis --> r4[/api/inquiries]
-      apis --> r5[/api/events]
-      apis --> r6[/api/press]
-      apis --> r7[/api/chat]
-      apis --> r8[/api/qr/resolve]
-      apis --> r9[/api/debug]
+   apis --> r1["/api/stadiums"]
+   apis --> r2["/api/sports"]
+   apis --> r3["/api/players"]
+   apis --> r4["/api/inquiries"]
+   apis --> r5["/api/events"]
+   apis --> r6["/api/press"]
+   apis --> r7["/api/chat"]
+   apis --> r8["/api/qr/resolve"]
+   apis --> r9["/api/debug"]
 ```
 
 ## 6) Data Flow Diagrams
@@ -430,21 +430,21 @@ Use it during onboarding and feature scoping.
 
 ```mermaid
 flowchart TB
-      root[InStadiumWeb]
-      root --> app[src/app]
-      root --> comp[src/components]
-      root --> lib[src/lib]
-      root --> prisma[prisma]
-      root --> assets[public/images]
-      root --> scripts[scripts]
+   root["InStadiumWeb"]
+   root --> app["src/app"]
+   root --> comp["src/components"]
+   root --> lib["src/lib"]
+   root --> prisma["prisma"]
+   root --> assets["public/images"]
+   root --> scripts["scripts"]
 
-      app --> pages[Public and Admin Pages]
-      app --> api[/api route handlers]
-      comp --> stadiumComp[stadium components]
-      comp --> sportsComp[sports components]
-      comp --> playerComp[player components]
-      lib --> dbLib[db and prisma clients]
-      lib --> utilityLib[maps, cloudinary, api helpers]
+   app --> pages["Public and Admin Pages"]
+   app --> api["API route handlers"]
+   comp --> stadiumComp["stadium components"]
+   comp --> sportsComp["sports components"]
+   comp --> playerComp["player components"]
+   lib --> dbLib["db and prisma clients"]
+   lib --> utilityLib["maps, cloudinary, api helpers"]
 ```
 
 ## 16) Technical Baseline (Concise)
