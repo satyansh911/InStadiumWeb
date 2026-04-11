@@ -10,14 +10,14 @@ This README is intentionally architecture-first and flow-first. It provides comp
 
 - Showcases stadiums, sports, and player narratives through public pages
 - Supports QR-based stadium entry paths and deep-linked experiences
-- Offers inquiry, press, and event workflows for content and operations
+- Offers discovery, QR, and assistant workflows for content-rich experiences
 - Exposes server routes for data retrieval, chat, and administrative processes
 
 ### Primary user groups
 
 - Fans and visitors exploring venues and sports
 - Content and editorial contributors
-- Admin users managing inquiries, events, and operational data
+- Admin users managing platform operations and curated content context
 
 ## 2) System Context Diagram
 
@@ -60,7 +60,7 @@ flowchart LR
 
       subgraph Application Layer
          routes[Route Handlers\n/api/*]
-         services[Domain Logic\nchat, inquiries, events, qr]
+         services[Domain Logic\nchat, discovery, qr]
       end
 
       subgraph Data and Integration Layer
@@ -106,14 +106,9 @@ mindmap
          Story and Timeline
          Associated Stadiums
       Engagement
-         Inquiry Submission
-         Press Archive
-         Event Highlights
          Chat Assistance
       Operations
          Admin Dashboard
-         Event Management
-         Inquiry Review
          Data Utilities
 ```
 
@@ -124,39 +119,29 @@ It reflects the App Router structure and route-domain grouping currently used.
 Use this for onboarding and navigation across the codebase.
 
 ```mermaid
-flowchart TB
-   root["src/app"]
+sequenceDiagram
+      autonumber
+      participant U as User
+      participant W as Web App
+      participant P as App Router Pages
+      participant A as Route Handlers
+      participant D as Neon DB
 
-   root --> public["Public Pages"]
-   root --> dynamic["Dynamic Detail Pages"]
-   root --> admin["Admin Pages"]
-   root --> apis["API Routes"]
+      U->>W: Open home page and browse content
+      W->>P: Render public routes like /, /sports, /stadiums, /search
+      P->>A: Request dynamic or API-backed data
+      A->>D: Read stadium, sport, player, and QR data
+      D-->>A: Result set
+      A-->>P: JSON payload
+      P-->>W: Rendered page content
 
-   public --> p1["/"]
-   public --> p2["/sports"]
-   public --> p3["/stadiums"]
-   public --> p4["/search"]
-   public --> p5["/press"]
-   public --> p6["/inquiry"]
-
-   dynamic --> d1["/stadium/:id"]
-   dynamic --> d2["/sport/:id"]
-   dynamic --> d3["/player/:id"]
-   dynamic --> d4["/portfolio/:id"]
-   dynamic --> d5["/qr/:code"]
-
-   admin --> a1["/admin/login"]
-   admin --> a2["/admin/dashboard"]
-
-   apis --> r1["/api/stadiums"]
-   apis --> r2["/api/sports"]
-   apis --> r3["/api/players"]
-   apis --> r4["/api/inquiries"]
-   apis --> r5["/api/events"]
-   apis --> r6["/api/press"]
-   apis --> r7["/api/chat"]
-   apis --> r8["/api/qr/resolve"]
-   apis --> r9["/api/debug"]
+      U->>W: Open /stadium/:id or /player/:id
+      W->>P: Resolve dynamic route
+      P->>A: Fetch detail data
+      A->>D: Query matching records
+      D-->>A: Detail record
+      A-->>P: Detail response
+      P-->>W: Detail page displayed
 ```
 
 ## 6) Data Flow Diagrams
@@ -169,7 +154,7 @@ It intentionally avoids internal logic details.
 
 ```mermaid
 flowchart LR
-      U[User] -->|browse, search, inquire, chat| P((InStadium Web Platform))
+   U[User] -->|browse, search, chat| P((InStadium Web Platform))
       P -->|pages, recommendations, confirmations| U
 
       P -->|query/read/write| D[(Operational Data Store)]
@@ -189,15 +174,11 @@ flowchart TB
 
       P1((P1 Discover Stadiums and Sports))
       P2((P2 View Detail Pages))
-      P3((P3 Submit and Manage Inquiries))
-      P4((P4 Manage Events and Press))
-      P5((P5 Resolve QR and Deep-Link))
-      P6((P6 AI Chat Interaction))
+      P3((P3 Resolve QR and Deep-Link))
+      P4((P4 AI Chat Interaction))
 
       D1[(Stadium/Sport/Player Data)]
-      D2[(Inquiry Records)]
-      D3[(Event and Press Records)]
-      D4[(QR Mapping Records)]
+      D2[(QR Mapping Records)]
 
       E1[Cloudinary]
       E2[OpenAI]
@@ -206,18 +187,13 @@ flowchart TB
       U --> P2
       U --> P3
       U --> P4
-      U --> P5
-      U --> P6
 
       P1 <--> D1
       P2 <--> D1
       P3 <--> D2
-      P4 <--> D3
-      P5 <--> D4
-      P6 <--> E2
+      P4 <--> E2
 
       P2 <--> E1
-      P4 <--> E1
 ```
 
 ## 7) Activity Diagram: Stadium Discovery Flow
@@ -241,22 +217,21 @@ flowchart TD
       I --> J([End])
 ```
 
-## 8) Activity Diagram: Inquiry Lifecycle
+## 8) Activity Diagram: QR Access Lifecycle
 
-This diagram shows the business communication flow from lead submission to admin processing.
-It represents the core operational loop for inquiries.
-It can later be extended with status transitions and SLA milestones.
+This diagram shows the QR-based path from a scanned code to a resolved stadium context.
+It represents the core physical-to-digital transition in the platform.
+It can later be extended with validation and fallback branches.
 
 ```mermaid
 flowchart TD
-      S([Start]) --> A[Visitor opens inquiry page]
-      A --> B[Fill inquiry form]
-      B --> C[Submit request]
-      C --> D[/api/inquiries POST/]
-      D --> E[(Inquiry Table)]
-      E --> F[Admin dashboard fetches latest inquiries]
-      F --> G[Admin reviews and updates status]
-      G --> H([End])
+   S([Start]) --> A[Visitor scans QR or opens code link]
+   A --> B[Open /qr/:code page]
+   B --> C[Call /api/qr/resolve]
+   C --> D[(QR Mapping Store)]
+   D --> E[Receive mapped stadium data]
+   E --> F[Redirect to stadium detail]
+   F --> G([End])
 ```
 
 ## 9) Sequence Diagram: Stadium Detail Request
@@ -343,8 +318,6 @@ stateDiagram-v2
       SearchMode --> Browsing
       Browsing --> DetailView
       DetailView --> Browsing
-      Browsing --> InquiryFlow
-      InquiryFlow --> Browsing
       Browsing --> QRFlow
       QRFlow --> DetailView
       Browsing --> AdminLogin
@@ -464,7 +437,7 @@ Detailed contracts and runbooks can be added in the reserved section later.
 ### Runtime Characteristics
 
 - API handlers use dynamic route mode for fresh data paths where required
-- Domain routes are grouped by bounded context (stadiums, sports, inquiries, events, press, qr, chat)
+- Domain routes are grouped by bounded context (stadiums, sports, qr, chat, debug)
 - Data retrieval mixes ORM and SQL approaches based on use case complexity
 
 ### Security and Access (High Level)
