@@ -76,6 +76,10 @@ async function main() {
   const wankhede = await prisma.stadium.upsert({
     where: { id: 'wankhede' },
     update: {
+      galleryImages: [
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/wankhedestadium_xkzgep.jpg', caption: 'Stadium View' },
+        { url: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80', caption: 'Crowd during match' }
+      ],
       historyTimeline: [
         { 
           year: 1974, 
@@ -126,7 +130,7 @@ async function main() {
       latitude: 18.9389,
       longitude: 72.8258,
       galleryImages: [
-        { url: '/images/stadiums/wankhedestadium.jpg', caption: 'Stadium View' },
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/wankhedestadium_xkzgep.jpg', caption: 'Stadium View' },
         { url: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80', caption: 'Crowd during match' }
       ],
       historyTimeline: [
@@ -179,6 +183,9 @@ async function main() {
   const narendraModi = await prisma.stadium.upsert({
     where: { id: 'narendra-modi' },
     update: {
+      galleryImages: [
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/narendramodistadium_uqsxbv.jpg', caption: 'Panoramic view' }
+      ],
       historyTimeline: [
         { 
           year: 2020, 
@@ -213,7 +220,7 @@ async function main() {
       latitude: 23.0919,
       longitude: 72.5975,
       galleryImages: [
-        { url: '/images/stadiums/narendramodistadium.jpg', caption: 'Panoramic view' }
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/narendramodistadium_uqsxbv.jpg', caption: 'Panoramic view' }
       ],
       historyTimeline: [
         { 
@@ -246,6 +253,9 @@ async function main() {
   const saltLake = await prisma.stadium.upsert({
     where: { id: 'salt-lake' },
     update: {
+      galleryImages: [
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/saltlakestadium_qpfmni.jpg', caption: 'Football Pitch' }
+      ],
       historyTimeline: [
         { 
           year: 1984, 
@@ -282,7 +292,7 @@ async function main() {
       latitude: 22.5694,
       longitude: 88.4092,
       galleryImages: [
-        { url: '/images/stadiums/saltlakestadium.jpg', caption: 'Football Pitch' }
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/saltlakestadium_qpfmni.jpg', caption: 'Football Pitch' }
       ],
       historyTimeline: [
         {
@@ -325,21 +335,21 @@ async function main() {
           year: 1978,
           title: 'Foundation Era',
           event: 'Kalinga Stadium began as a multi-sport venue and later evolved into India\'s hockey capital.',
-          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg',
           type: 'milestone'
         },
         {
           year: 2018,
           title: 'Hockey World Cup Host',
           event: 'Hosted the Men\'s Hockey World Cup and delivered a world-class fan atmosphere.',
-          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg',
           type: 'match'
         },
         {
           year: 2023,
           title: 'World Cup Returns',
           event: 'Again hosted major Hockey World Cup fixtures, strengthening its status as a global hockey venue.',
-          thumbnail: '/images/stadiums/kalingastadium.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg',
           type: 'match'
         }
       ],
@@ -363,7 +373,7 @@ async function main() {
       latitude: 20.2961,
       longitude: 85.8245,
       galleryImages: [
-        { url: '/images/stadiums/kalingastadium.jpg', caption: 'Stadium View' }
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg', caption: 'Stadium View' }
       ],
       historyTimeline: [
         {
@@ -413,21 +423,21 @@ async function main() {
           year: 1994,
           title: 'Academy Established',
           event: 'Prakash Padukone Badminton Academy was founded to build India\'s next generation of champions.',
-          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg',
           type: 'milestone'
         },
         {
           year: 2010,
           title: 'National Elite Hub',
           event: 'Became a major training base for top shuttlers competing at global events.',
-          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg',
           type: 'milestone'
         },
         {
           year: 2022,
           title: 'Premier Domestic Events',
           event: 'Hosted high-intensity national circuit matches featuring rising Indian stars.',
-          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg',
           type: 'match'
         }
       ],
@@ -451,7 +461,7 @@ async function main() {
       latitude: 13.0086,
       longitude: 77.5931,
       galleryImages: [
-        { url: '/images/stadiums/prakashpadukonebadmintonacademy.jpg', caption: 'Academy View' }
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg', caption: 'Academy View' }
       ],
       historyTimeline: [
         {
@@ -501,21 +511,21 @@ async function main() {
           year: 1982,
           title: 'National Tennis Landmark',
           event: 'R.K. Khanna Tennis Stadium emerged as a flagship destination for Indian tennis.',
-          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg',
           type: 'milestone'
         },
         {
           year: 2010,
           title: 'Commonwealth Spotlight',
           event: 'Hosted high-profile tennis events during India\'s global sporting calendar.',
-          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg',
           type: 'match'
         },
         {
           year: 2023,
           title: 'Davis Cup Nights',
           event: 'Welcomed packed crowds for national-team tennis ties in a high-pressure atmosphere.',
-          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
+          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg',
           type: 'match'
         }
       ],
@@ -539,7 +549,7 @@ async function main() {
       latitude: 28.5919,
       longitude: 77.2243,
       galleryImages: [
-        { url: '/images/stadiums/rkkhannastadium.jpg', caption: 'Stadium View' }
+        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg', caption: 'Stadium View' }
       ],
       historyTimeline: [
         {
