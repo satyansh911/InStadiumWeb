@@ -43,8 +43,20 @@ export default async function SportPage({ params }: { params: Promise<{ id: stri
     tags: []
   };
 
-  // Serialize data for client component
-  const serializedSport = JSON.parse(JSON.stringify(sport));
+  // Map Prisma relation data for client component
+  const mappingStadiums = (sport.SportToStadium || []).map((ss: any) => {
+    const s = ss.Stadium;
+    return {
+      ...s,
+      sports: (s.SportToStadium || []).map((inner: any) => inner.Sport.name)
+    };
+  });
+
+  const serializedSport = {
+    ...JSON.parse(JSON.stringify(sport)),
+    stadiums: mappingStadiums,
+    players: sport.Player || []
+  };
   const serializedMetadata = JSON.parse(JSON.stringify(metadata));
 
   return (
