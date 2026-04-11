@@ -107,6 +107,7 @@ mindmap
          Associated Stadiums
       Engagement
          Chat Assistance
+         Sport Booking Modal
       Operations
          Admin Dashboard
          Data Utilities
@@ -418,6 +419,7 @@ flowchart TB
    comp --> playerComp["player components"]
    lib --> dbLib["db and prisma clients"]
    lib --> utilityLib["maps, cloudinary, api helpers"]
+   lib --> geoLib["geo distance utility"]
 ```
 
 ## 16) Technical Baseline (Concise)
@@ -433,6 +435,10 @@ Detailed contracts and runbooks can be added in the reserved section later.
 - Persistence: Neon PostgreSQL
 - Data Access: Prisma Client and Neon serverless SQL driver
 - Integrations: OpenAI chat, Cloudinary media services
+- UI Additions: `BookingModal` component for sport-level event booking flows
+- Utilities: `geo.ts` library for proximity-based nearby stadium distance calculation
+- Static Assets: Player image set added (`/public/images/players/`) for key cricket, badminton, and tennis athletes
+- Data: `sports-data.ts` and `prisma/seed.ts` significantly expanded with richer sport and stadium content
 
 ### Runtime Characteristics
 
