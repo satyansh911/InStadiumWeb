@@ -44,10 +44,15 @@ export default function MatchesSection({ matches }: { matches: any[] }) {
               </div>
 
               <div className="lg:col-span-3 flex justify-center lg:justify-end">
-                <button className="px-10 py-5 bg-plum text-blush rounded-2xl flex items-center gap-4 font-sans text-xs uppercase tracking-[0.3em] font-normal hover:bg-rose hover:scale-105 transition-all duration-500 shadow-xl">
+                <a 
+                  href={match.bookingUrl || `https://in.bookmyshow.com/explore/search?searchQuery=${encodeURIComponent(match.teams + " " + match.tournament)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-10 py-5 bg-plum text-blush rounded-2xl flex items-center gap-4 font-sans text-xs uppercase tracking-[0.3em] font-normal hover:bg-rose hover:scale-105 transition-all duration-500 shadow-xl"
+                >
                   <Ticket size={16} className="text-rose group-hover:text-blush" />
                   Reserve Seat
-                </button>
+                </a>
               </div>
             </div>
           </ScrollReveal>

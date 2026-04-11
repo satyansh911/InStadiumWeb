@@ -76,8 +76,16 @@ async function main() {
   const wankhede = await prisma.stadium.upsert({
     where: { id: 'wankhede' },
     update: {
+      name: 'Wankhede Stadium',
+      city: 'Mumbai',
+      state: 'Maharashtra',
+      capacity: 33000,
+      builtYear: 1974,
+      description: 'The Wankhede Stadium is an international cricket stadium in Mumbai, India. It hosted the 2011 Cricket World Cup Final.',
+      latitude: 18.9389,
+      longitude: 72.8258,
       galleryImages: [
-        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/wankhedestadium_xkzgep.jpg', caption: 'Stadium View' },
+        { url: '/images/stadiums/wankhedestadium.jpg', caption: 'Stadium View' },
         { url: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80', caption: 'Crowd during match' }
       ],
       historyTimeline: [
@@ -130,7 +138,7 @@ async function main() {
       latitude: 18.9389,
       longitude: 72.8258,
       galleryImages: [
-        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/wankhedestadium_xkzgep.jpg', caption: 'Stadium View' },
+        { url: '/images/stadiums/wankhedestadium.jpg', caption: 'Stadium View' },
         { url: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80', caption: 'Crowd during match' }
       ],
       historyTimeline: [
@@ -172,7 +180,18 @@ async function main() {
         }
       ],
       upcomingMatches: [
-        { teams: 'MI vs CSK', date: '2026-04-10', type: 'IPL' }
+        { 
+          teams: 'MI vs RCB', 
+          date: '2026-04-14', 
+          tournament: 'IPL 2026',
+          bookingUrl: 'https://in.bookmyshow.com/explore/search?searchQuery=MI%20vs%20RCB%20Wankhede'
+        },
+        { 
+          teams: 'India vs Pakistan', 
+          date: '2026-10-24', 
+          tournament: 'T20 World Cup',
+          bookingUrl: 'https://in.bookmyshow.com/explore/search?searchQuery=India%20vs%20Pakistan'
+        }
       ],
       sportsPlayed: {
         connect: [{ id: 'cricket' }]
@@ -183,8 +202,16 @@ async function main() {
   const narendraModi = await prisma.stadium.upsert({
     where: { id: 'narendra-modi' },
     update: {
+      name: 'Narendra Modi Stadium',
+      city: 'Ahmedabad',
+      state: 'Gujarat',
+      capacity: 132000,
+      builtYear: 2020,
+      description: 'The Narendra Modi Stadium is the largest stadium in the world, with a seating capacity of 132,000 spectators.',
+      latitude: 23.0919,
+      longitude: 72.5975,
       galleryImages: [
-        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/narendramodistadium_uqsxbv.jpg', caption: 'Panoramic view' }
+        { url: '/images/stadiums/narendramodistadium.jpg', caption: 'Panoramic view' }
       ],
       historyTimeline: [
         { 
@@ -208,6 +235,14 @@ async function main() {
           type: "match"
         }
       ],
+      upcomingMatches: [
+        { 
+          teams: 'GT vs CSK', 
+          date: '2026-05-02', 
+          tournament: 'IPL 2026',
+          bookingUrl: 'https://in.bookmyshow.com/explore/search?searchQuery=GT%20vs%20CSK%20Ahmedabad'
+        }
+      ]
     },
     create: {
       id: 'narendra-modi',
@@ -253,8 +288,16 @@ async function main() {
   const saltLake = await prisma.stadium.upsert({
     where: { id: 'salt-lake' },
     update: {
+      name: 'Salt Lake Stadium',
+      city: 'Kolkata',
+      state: 'West Bengal',
+      capacity: 85000,
+      builtYear: 1984,
+      description: 'Vivekananda Yuba Bharati Krirangan, commonly known as Salt Lake Stadium, is one of the largest multi-purpose stadiums in Asia.',
+      latitude: 22.5694,
+      longitude: 88.4092,
       galleryImages: [
-        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/saltlakestadium_qpfmni.jpg', caption: 'Football Pitch' }
+        { url: '/images/stadiums/saltlakestadium.jpg', caption: 'Football Pitch' }
       ],
       historyTimeline: [
         { 
@@ -327,29 +370,37 @@ async function main() {
   const kalinga = await prisma.stadium.upsert({
     where: { id: 'kalinga' },
     update: {
+      name: 'Kalinga Stadium',
+      city: 'Bhubaneswar',
+      state: 'Odisha',
+      capacity: 20000,
+      builtYear: 1978,
       description: "A world-class hockey venue in Bhubaneswar that helped define India's modern hockey resurgence.",
       latitude: 20.2961,
       longitude: 85.8245,
+      galleryImages: [
+        { url: '/images/stadiums/kalingastadium.jpg', caption: 'Stadium View' }
+      ],
       historyTimeline: [
         {
           year: 1978,
           title: 'Foundation Era',
           event: 'Kalinga Stadium began as a multi-sport venue and later evolved into India\'s hockey capital.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
           type: 'milestone'
         },
         {
           year: 2018,
           title: 'Hockey World Cup Host',
           event: 'Hosted the Men\'s Hockey World Cup and delivered a world-class fan atmosphere.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
           type: 'match'
         },
         {
           year: 2023,
           title: 'World Cup Returns',
           event: 'Again hosted major Hockey World Cup fixtures, strengthening its status as a global hockey venue.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg',
+          thumbnail: '/images/stadiums/kalingastadium.jpg',
           type: 'match'
         }
       ],
@@ -373,7 +424,7 @@ async function main() {
       latitude: 20.2961,
       longitude: 85.8245,
       galleryImages: [
-        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/kalingastadium_hbqkwt.jpg', caption: 'Stadium View' }
+        { url: '/images/stadiums/kalingastadium.jpg', caption: 'Stadium View' }
       ],
       historyTimeline: [
         {
@@ -415,29 +466,37 @@ async function main() {
   const prakashPadukone = await prisma.stadium.upsert({
     where: { id: 'prakash-padukone' },
     update: {
+      name: 'Prakash Padukone Badminton Academy',
+      city: 'Bangalore',
+      state: 'Karnataka',
+      capacity: 2000,
+      builtYear: 1994,
       description: 'A premier high-performance badminton academy that has produced and hosted elite Indian badminton talent.',
       latitude: 13.0086,
       longitude: 77.5931,
+      galleryImages: [
+        { url: '/images/stadiums/prakashpadukonebadmintonacademy.jpg', caption: 'Academy View' }
+      ],
       historyTimeline: [
         {
           year: 1994,
           title: 'Academy Established',
           event: 'Prakash Padukone Badminton Academy was founded to build India\'s next generation of champions.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
           type: 'milestone'
         },
         {
           year: 2010,
           title: 'National Elite Hub',
           event: 'Became a major training base for top shuttlers competing at global events.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
           type: 'milestone'
         },
         {
           year: 2022,
           title: 'Premier Domestic Events',
           event: 'Hosted high-intensity national circuit matches featuring rising Indian stars.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg',
+          thumbnail: '/images/stadiums/prakashpadukonebadmintonacademy.jpg',
           type: 'match'
         }
       ],
@@ -461,7 +520,7 @@ async function main() {
       latitude: 13.0086,
       longitude: 77.5931,
       galleryImages: [
-        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/prakashpadukonebadmintonacademy_nxwqal.jpg', caption: 'Academy View' }
+        { url: '/images/stadiums/prakashpadukonebadmintonacademy.jpg', caption: 'Academy View' }
       ],
       historyTimeline: [
         {
@@ -503,29 +562,37 @@ async function main() {
   const rkKhanna = await prisma.stadium.upsert({
     where: { id: 'rk-khanna' },
     update: {
+      name: 'R.K. Khanna Tennis Stadium',
+      city: 'New Delhi',
+      state: 'Delhi',
+      capacity: 5014,
+      builtYear: 1982,
       description: 'India\'s premier tennis venue in New Delhi, known for Davis Cup ties and major ATP/WTA-level competition windows.',
       latitude: 28.5919,
       longitude: 77.2243,
+      galleryImages: [
+        { url: '/images/stadiums/rkkhannastadium.jpg', caption: 'Stadium View' }
+      ],
       historyTimeline: [
         {
           year: 1982,
           title: 'National Tennis Landmark',
           event: 'R.K. Khanna Tennis Stadium emerged as a flagship destination for Indian tennis.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
           type: 'milestone'
         },
         {
           year: 2010,
           title: 'Commonwealth Spotlight',
           event: 'Hosted high-profile tennis events during India\'s global sporting calendar.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
           type: 'match'
         },
         {
           year: 2023,
           title: 'Davis Cup Nights',
           event: 'Welcomed packed crowds for national-team tennis ties in a high-pressure atmosphere.',
-          thumbnail: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg',
+          thumbnail: '/images/stadiums/rkkhannastadium.jpg',
           type: 'match'
         }
       ],
@@ -549,7 +616,7 @@ async function main() {
       latitude: 28.5919,
       longitude: 77.2243,
       galleryImages: [
-        { url: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775897505/rkkhannastadium_bqhvdr.jpg', caption: 'Stadium View' }
+        { url: '/images/stadiums/rkkhannastadium.jpg', caption: 'Stadium View' }
       ],
       historyTimeline: [
         {
