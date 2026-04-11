@@ -7,7 +7,11 @@ export default async function SportsPage() {
   const sports = await prisma.sport.findMany();
   const stadiums = await prisma.stadium.findMany({
     include: {
-      sportsPlayed: true,
+      SportToStadium: {
+        include: {
+          Sport: true
+        }
+      },
     },
   });
 

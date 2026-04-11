@@ -10,12 +10,17 @@ export async function GET(request: NextRequest) {
   try {
     const players = await prisma.player.findMany({
       where: stadiumId ? {
-        stadiumsPlayed: {
-          some: { id: stadiumId }
+        PlayerToStadium: {
+          some: { B: stadiumId }
         }
       } : {},
       include: {
-        sport: true
+        Sport: true,
+        PlayerToStadium: {
+          include: {
+            Stadium: true
+          }
+        }
       }
     });
     return NextResponse.json(players);

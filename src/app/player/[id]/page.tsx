@@ -23,8 +23,12 @@ async function getPlayer(id: string) {
   const playerWithRelations = await prisma.player.findUnique({
     where: { id },
     include: {
-      sport: true,
-      stadiumsPlayed: true,
+      Sport: true,
+      PlayerToStadium: {
+        include: {
+          Stadium: true
+        }
+      },
     },
   });
 

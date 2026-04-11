@@ -7,7 +7,11 @@ export async function GET() {
   try {
     const stadiums = await prisma.stadium.findMany({
       include: {
-        sportsPlayed: true,
+        SportToStadium: {
+          include: {
+            Sport: true
+          }
+        },
       },
       orderBy: {
         capacity: 'desc',

@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     const mapping = await prisma.qRMapping.findUnique({
       where: { qrCode: code },
       include: {
-        stadium: true
+        Stadium: true
       }
     });
 

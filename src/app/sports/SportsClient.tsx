@@ -196,7 +196,7 @@ export default function SportsClient({ initialSports, initialStadiums }: { initi
 
   const affiliatedStadiums = useMemo(() => {
     return initialStadiums.filter(stadium => 
-      stadium.sportsPlayed?.some((s: any) => s.name === selectedSportName)
+      stadium.SportToStadium?.some((ss: any) => ss.Sport.name === selectedSportName)
     );
   }, [selectedSportName, initialStadiums]);
 

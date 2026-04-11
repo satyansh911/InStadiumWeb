@@ -8,7 +8,7 @@ export async function GET() {
     const sports = await prisma.sport.findMany({
       include: {
         _count: {
-          select: { stadiums: true }
+          select: { SportToStadium: true }
         }
       }
     });

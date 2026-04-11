@@ -36,8 +36,16 @@ export default async function StadiumPage({ params }: { params: Promise<{ id: st
     stadiumData = await prisma.stadium.findUnique({
       where: { id },
       include: {
-        sportsPlayed: true,
-        players: true,
+        SportToStadium: {
+          include: {
+            Sport: true
+          }
+        },
+        PlayerToStadium: {
+          include: {
+            Player: true
+          }
+        },
       },
     });
   } catch (error) {
@@ -56,8 +64,11 @@ export default async function StadiumPage({ params }: { params: Promise<{ id: st
     matches: Array.isArray(stadiumData.upcomingMatches) 
       ? (stadiumData.upcomingMatches as any[]) 
       : [],
-    sports: Array.isArray(stadiumData.sportsPlayed) 
-      ? (stadiumData.sportsPlayed as any[]).map(s => s.name) 
+    sports: Array.isArray(stadiumData.SportToStadium) 
+      ? (stadiumData.SportToStadium as any[]).map(ss => ss.Sport.name) 
+      : [],
+    players: Array.isArray(stadiumData.PlayerToStadium)
+      ? (stadiumData.PlayerToStadium as any[]).map(ps => ps.Player)
       : [],
     heroImage: (Array.isArray(stadiumData.galleryImages) && stadiumData.galleryImages.length > 0)
       ? (stadiumData.galleryImages as any[])[0].url || (stadiumData.galleryImages as any[])[0]

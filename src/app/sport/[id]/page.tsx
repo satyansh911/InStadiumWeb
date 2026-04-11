@@ -11,12 +11,20 @@ export default async function SportPage({ params }: { params: Promise<{ id: stri
   const sport = await prisma.sport.findUnique({
     where: { id },
     include: {
-      stadiums: {
+      SportToStadium: {
         include: {
-          sportsPlayed: true
+          Stadium: {
+            include: {
+              SportToStadium: {
+                include: {
+                  Sport: true
+                }
+              }
+            }
+          }
         }
       },
-      players: true
+      Player: true
     }
   });
 

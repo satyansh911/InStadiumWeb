@@ -12,8 +12,16 @@ export async function GET(
     const stadium = await prisma.stadium.findUnique({
       where: { id },
       include: {
-        sportsPlayed: true,
-        players: true,
+        SportToStadium: {
+          include: {
+            Sport: true
+          }
+        },
+        PlayerToStadium: {
+          include: {
+            Player: true
+          }
+        },
       },
     });
 
