@@ -29,7 +29,8 @@ export default function NearbyStadiums() {
   useEffect(() => {
     async function init() {
       try {
-        const { data } = await getStadiums();
+        const { data: rawData } = await getStadiums();
+        const data = rawData as StadiumWithDistance[] | null;
         if (!data) return;
 
         // Try to get location
