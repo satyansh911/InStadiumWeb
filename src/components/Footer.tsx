@@ -3,7 +3,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-blush bg-pinstripe py-32 md:py-48 px-6 md:px-12 border-t border-rose/15 relative">
+    <footer className="w-full bg-blush bg-pinstripe py-20 md:py-28 px-6 md:px-12 border-t border-rose/15 relative">
       <div className="absolute inset-0 bg-blush/80 pointer-events-none" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-8">
@@ -51,11 +51,10 @@ export default function Footer() {
 
         </div>
 
-        <ScrollReveal className="mt-32 pt-8 border-t border-rose/15 flex flex-col md:flex-row justify-between items-center text-xs text-plum/40 font-sans tracking-[0.1em] uppercase">
-          <p>&copy; {new Date().getFullYear()} Instadium Media.</p>
+        <ScrollReveal className="mt-20 pt-8 border-t border-rose/15 flex flex-col md:flex-row justify-between items-center text-xs text-plum/40 font-sans tracking-[0.1em] uppercase">
+          <p>&copy; {new Date().getFullYear()} Instadium.</p>
           <div className="flex space-x-8 mt-6 md:mt-0">
-             <Link href="#" className="hover:text-plum transition-colors duration-300">Client Portal</Link>
-             <Link href="/admin/dashboard" className="hover:text-plum transition-colors duration-300">Staff Portal</Link>
+             {/* Portals Removed */}
           </div>
         </ScrollReveal>
       </div>

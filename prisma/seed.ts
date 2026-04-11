@@ -601,7 +601,7 @@ async function main() {
       name: 'Sachin Tendulkar',
       sport: { connect: { id: 'cricket' } },
       country: 'India',
-      image: '/images/players/sachintendulkar.jpg',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/sachintendulkar_arvchm.jpg',
       bio: "Widely regarded as the greatest batsman in the history of cricket, Sachin Tendulkar's career spanned 24 years of absolute dominance. Known as the 'God of Cricket', he redefined batting excellence and carried the hopes of a billion people.\n\nBorn in Mumbai, Sachin's journey began at Shivaji Park under the rigorous tutelage of Ramakant Achrekar. By age 16, he was facing the world's most fearsome bowlers on his international debut against Pakistan. Over the next two decades, he became a symbol of national unity, his centuries often bringing a diverse nation to a standstill. Beyond the runs, it was his humility and relentless work ethic that cemented his legacy as a global sporting icon.",
       careerTimeline: [
         { year: 1989, event: 'International Debut against Pakistan as a 16-year-old prodigy.' },
@@ -616,6 +616,46 @@ async function main() {
         { label: 'World Cup Title', value: '1' }
       ],
       achievements: ['Bharat Ratna', '100 International Centuries'],
+      stadiumsPlayed: { connect: [{ id: 'wankhede' }, { id: 'narendra-modi' }] }
+    }
+  })
+
+  await prisma.player.upsert({
+    where: { id: 'virat' },
+    update: {
+      bio: "The modern-day titan of cricket, Virat Kohli's fierce competitiveness and technical brilliance have rewritten record books. From leading India to a U-19 World Cup title to becoming the most followed cricketer globally, his journey is a masterclass in dedication.\n\nKnown for his peerless chasing abilities in limited-overs cricket, Kohli brought a new level of fitness and aggression to the Indian team. His transition from a talented youngster to a global superstar was marked by a relentless pursuit of excellence and a passion for the red-ball game that revitalized Test cricket in India. Beyond his hundreds, his legacy lies in the transformation of the Indian team into a fitness-first, high-intensity unit.",
+      careerTimeline: [
+        { year: 2008, event: 'Led India to victory in the ICC U-19 World Cup.' },
+        { year: 2011, event: 'World Cup winner at age 22, playing a crucial role in the final.' },
+        { year: 2014, event: 'Took over as Test captain, leading India to historic wins abroad.' },
+        { year: 2023, event: 'Overtook Sachin Tendulkar for most ODI hundreds during the World Cup.' }
+      ],
+      stats: [
+        { label: 'International Hundreds', value: '80+' },
+        { label: 'ODI Average', value: '58+' },
+        { label: 'ICC Awards', value: '10+' }
+      ],
+      achievements: ['Khel Ratna', 'Padma Shri', 'ODI Cricketer of the Decade']
+    },
+    create: {
+      id: 'virat',
+      name: 'Virat Kohli',
+      sport: { connect: { id: 'cricket' } },
+      country: 'India',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901628/viratkohli_g7tzsx.png',
+      bio: "The modern-day titan of cricket, Virat Kohli's fierce competitiveness and technical brilliance have rewritten record books. From leading India to a U-19 World Cup title to becoming the most followed cricketer globally, his journey is a masterclass in dedication.\n\nKnown for his peerless chasing abilities in limited-overs cricket, Kohli brought a new level of fitness and aggression to the Indian team. His transition from a talented youngster to a global superstar was marked by a relentless pursuit of excellence and a passion for the red-ball game that revitalized Test cricket in India. Beyond his hundreds, his legacy lies in the transformation of the Indian team into a fitness-first, high-intensity unit.",
+      careerTimeline: [
+        { year: 2008, event: 'Led India to victory in the ICC U-19 World Cup.' },
+        { year: 2011, event: 'World Cup winner at age 22, playing a crucial role in the final.' },
+        { year: 2014, event: 'Took over as Test captain, leading India to historic wins abroad.' },
+        { year: 2023, event: 'Overtook Sachin Tendulkar for most ODI hundreds during the World Cup.' }
+      ],
+      stats: [
+        { label: 'International Hundreds', value: '80+' },
+        { label: 'ODI Average', value: '58+' },
+        { label: 'ICC Awards', value: '10+' }
+      ],
+      achievements: ['Khel Ratna', 'Padma Shri', 'ODI Cricketer of the Decade'],
       stadiumsPlayed: { connect: [{ id: 'wankhede' }, { id: 'narendra-modi' }] }
     }
   })
@@ -642,7 +682,7 @@ async function main() {
       name: 'Sunil Chhetri',
       sport: { connect: { id: 'football' } },
       country: 'India',
-      image: '/images/players/sunilchhetri.jpg',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901628/sunilchhetri_ezdhww.jpg',
       bio: "The heart and soul of Indian football, Sunil Chhetri is one of the all-time leading international goalscorers. His leadership and commitment have propelled Indian football onto the global stage.\n\nChhetri's story is one of grit and longevity. Starting professionally at Mohun Bagan, he quickly rose to prominence as a clinical finisher. He is the third-highest active international goalscorer, trailing only Lionel Messi and Cristiano Ronaldo—a testament to his world-class consistency. His passionate plea in 2018 for fans to support Indian football at the stadiums became a turning point, revitalizing the sport's popularity across India.",
       careerTimeline: [
         { year: 2005, event: 'International Debut against Pakistan, scoring his first goal.' },
@@ -683,7 +723,7 @@ async function main() {
       name: 'Manpreet Singh',
       sport: { connect: { id: 'hockey' } },
       country: 'India',
-      image: '/images/players/manpreetsingh.jpg',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/manpreetsingh_modxsl.jpg',
       bio: "The dynamic midfield engine and captain who led the Indian Men's Hockey team to a historic Olympic medal after 41 years. Known for his tactical brilliance and relentless energy.\n\nHailing from Mithapur, a village known for its hockey nursery, Manpreet's rise to the captaincy was built on a foundation of discipline and tactical awareness. His leadership during the Tokyo 2020 Olympics was instrumental in ending India's long medal drought in hockey, a moment that reignited the nation's passion for its national sport. His playmaking ability and poise under pressure continue to define Indian hockey's modern era.",
       careerTimeline: [
         { year: 2011, event: 'Senior international debut for India.' },
@@ -724,7 +764,7 @@ async function main() {
       name: 'PV Sindhu',
       sport: { connect: { id: 'badminton' } },
       country: 'India',
-      image: '/images/players/pvsindhu.jpg',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/pvsindhu_tkgxro.jpg',
       bio: "A powerhouse of Indian badminton, PV Sindhu is the first Indian woman to win two Olympic medals. Her aggressive style and unwavering grit have made her a global sporting icon.\n\nSindhu's journey into badminton was inspired by Pullela Gopichand's success, leading her to train under him from a young age. Her breakthrough came at the Rio 2016 Olympics, where her silver medal performance transfixed an entire country. Since then, she has become a consistent threat on the world stage, winning a gold at the 2019 World Championships and a bronze in Tokyo 2020, solidifying her status as one of India's most decorated individual athletes.",
       careerTimeline: [
         { year: 2013, event: 'Won her first World Championship medal (Bronze) in Guangzhou.' },
@@ -740,6 +780,198 @@ async function main() {
       ],
       achievements: ['Olympic Silver & Bronze', 'World Champion 2019'],
       stadiumsPlayed: { connect: [{ id: 'prakash-padukone' }] }
+    }
+  })
+
+  await prisma.player.upsert({
+    where: { id: 'saina' },
+    update: {
+      bio: "The trailblazer who put Indian badminton on the Olympic podium, Saina Nehwal's historic bronze at London 2012 was a watershed moment for Indian sports. Her grit and mental strength made her a former World No. 1.\n\nSaina's career is marked by numerous 'firsts' for India—the first to win an Olympic medal in badminton, the first to win the BWF World Junior Championships, and the first to reach the finals of the BWF World Championships. Her success at the highest level, including over 20 international titles, paved the way for the current golden era of Indian badminton. She remains a symbol of determination and excellence.",
+      careerTimeline: [
+        { year: 2008, event: 'First Indian to win the World Junior Badminton Championships.' },
+        { year: 2010, event: 'Won Gold at the Commonwealth Games in Delhi.' },
+        { year: 2012, event: 'Won the historic Bronze medal at the London Olympics.' },
+        { year: 2015, event: 'Ranked World No. 1 in women\'s singles by BWF.' }
+      ],
+      stats: [
+        { label: 'Olympic Medals', value: '1' },
+        { label: 'BWF Titles', value: '24' },
+        { label: 'World Ranking', value: 'Former No. 1' }
+      ],
+      achievements: ['Olympic Bronze 2012', 'Former World No. 1', 'Khel Ratna Award']
+    },
+    create: {
+      id: 'saina',
+      name: 'Saina Nehwal',
+      sport: { connect: { id: 'badminton' } },
+      country: 'India',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775902127/sainanehwal_tkywz1.jpg',
+      bio: "The trailblazer who put Indian badminton on the Olympic podium, Saina Nehwal's historic bronze at London 2012 was a watershed moment for Indian sports. Her grit and mental strength made her a former World No. 1.\n\nSaina's career is marked by numerous 'firsts' for India—the first to win an Olympic medal in badminton, the first to win the BWF World Junior Championships, and the first to reach the finals of the BWF World Championships. Her success at the highest level, including over 20 international titles, paved the way for the current golden era of Indian badminton. She remains a symbol of determination and excellence.",
+      careerTimeline: [
+        { year: 2008, event: 'First Indian to win the World Junior Badminton Championships.' },
+        { year: 2010, event: 'Won Gold at the Commonwealth Games in Delhi.' },
+        { year: 2012, event: 'Won the historic Bronze medal at the London Olympics.' },
+        { year: 2015, event: 'Ranked World No. 1 in women\'s singles by BWF.' }
+      ],
+      stats: [
+        { label: 'Olympic Medals', value: '1' },
+        { label: 'BWF Titles', value: '24' },
+        { label: 'World Ranking', value: 'Former No. 1' }
+      ],
+      achievements: ['Olympic Bronze 2012', 'Former World No. 1', 'Khel Ratna Award'],
+      stadiumsPlayed: { connect: [{ id: 'prakash-padukone' }] }
+    }
+  })
+
+  await prisma.player.upsert({
+    where: { id: 'leander' },
+    update: {
+      bio: "An absolute legend of world tennis, Leander Paes' longevity and success in doubles are unparalleled. His Olympic bronze in 1996 ended India's 44-year wait for an individual Olympic medal.\n\nWith 18 Grand Slam titles in men's doubles and mixed doubles, Paes is one of the most successful doubles players ever. His 'Indian Express' partnership with Mahesh Bhupathi remains one of the most iconic duos in tennis history. Known for his incredible net play and chest-bumps, his passion for representing India in the Davis Cup for over three decades defines his sporting spirit.",
+      careerTimeline: [
+        { year: 1996, event: 'Won the Olympic Bronze medal in Atlanta in singles.' },
+        { year: 1999, event: 'Reached the finals of all four Grand Slams in doubles with Bhupathi.' },
+        { year: 2016, event: 'Competed in his record 7th consecutive Olympic Games.' }
+      ],
+      stats: [
+        { label: 'Grand Slams', value: '18' },
+        { label: 'Olympic Games', value: '7' },
+        { label: 'Davis Cup Wins', value: 'Prev. Record Holder' }
+      ],
+      achievements: ['Olympic Bronze 1996', '18 Grand Slam Titles', 'Padma Bhushan']
+    },
+    create: {
+      id: 'leander',
+      name: 'Leander Paes',
+      sport: { connect: { id: 'tennis' } },
+      country: 'India',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/leanderpaes_d3dpjp.png',
+      bio: "An absolute legend of world tennis, Leander Paes' longevity and success in doubles are unparalleled. His Olympic bronze in 1996 ended India's 44-year wait for an individual Olympic medal.\n\nWith 18 Grand Slam titles in men's doubles and mixed doubles, Paes is one of the most successful doubles players ever. His 'Indian Express' partnership with Mahesh Bhupathi remains one of the most iconic duos in tennis history. Known for his incredible net play and chest-bumps, his passion for representing India in the Davis Cup for over three decades defines his sporting spirit.",
+      careerTimeline: [
+        { year: 1996, event: 'Won the Olympic Bronze medal in Atlanta in singles.' },
+        { year: 1999, event: 'Reached the finals of all four Grand Slams in doubles with Bhupathi.' },
+        { year: 2016, event: 'Competed in his record 7th consecutive Olympic Games.' }
+      ],
+      stats: [
+        { label: 'Grand Slams', value: '18' },
+        { label: 'Olympic Games', value: '7' },
+        { label: 'Davis Cup Wins', value: 'Prev. Record Holder' }
+      ],
+      achievements: ['Olympic Bronze 1996', '18 Grand Slam Titles', 'Padma Bhushan'],
+      stadiumsPlayed: { connect: [{ id: 'rk-khanna' }] }
+    }
+  })
+
+  await prisma.player.upsert({
+    where: { id: 'gavaskar' },
+    update: {
+      bio: "The 'Little Master' who taught India how to compete against the world's most fearsome fast bowlers without a helmet. Sunil Gavaskar's technique and courage set the foundation for Indian cricket's global dominance.\n\nHis debut series in the West Indies in 1971, where he scored 774 runs, remains the stuff of legend. Gavaskar was the first player to reach 10,000 runs in Test cricket and held the record for the most centuries for decades. His discipline at the crease and his ability to leave the ball made him the ultimate opening batsman, inspiring a generation of cricketers, including Sachin Tendulkar.",
+      careerTimeline: [
+        { year: 1971, event: 'Sensational debut series in West Indies with 774 runs.' },
+        { year: 1983, event: 'Member of the historic World Cup winning squad.' },
+        { year: 1987, event: 'First cricketer to score 10,000 Test runs.' }
+      ],
+      stats: [
+        { label: 'Test Runs', value: '10,122' },
+        { label: 'Test Centuries', value: '34' },
+        { label: 'Test Average', value: '51.12' }
+      ],
+      achievements: ['Padma Bhushan', 'First to 10k Test Runs', 'World Cup 1983']
+    },
+    create: {
+      id: 'gavaskar',
+      name: 'Sunil Gavaskar',
+      sport: { connect: { id: 'cricket' } },
+      country: 'India',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/sunilgavaskar_oqig8j.jpg',
+      bio: "The 'Little Master' who taught India how to compete against the world's most fearsome fast bowlers without a helmet. Sunil Gavaskar's technique and courage set the foundation for Indian cricket's global dominance.\n\nHis debut series in the West Indies in 1971, where he scored 774 runs, remains the stuff of legend. Gavaskar was the first player to reach 10,000 runs in Test cricket and held the record for the most centuries for decades. His discipline at the crease and his ability to leave the ball made him the ultimate opening batsman, inspiring a generation of cricketers, including Sachin Tendulkar.",
+      careerTimeline: [
+        { year: 1971, event: 'Sensational debut series in West Indies with 774 runs.' },
+        { year: 1983, event: 'Member of the historic World Cup winning squad.' },
+        { year: 1987, event: 'First cricketer to score 10,000 Test runs.' }
+      ],
+      stats: [
+        { label: 'Test Runs', value: '10,122' },
+        { label: 'Test Centuries', value: '34' },
+        { label: 'Test Average', value: '51.12' }
+      ],
+      achievements: ['Padma Bhushan', 'First to 10k Test Runs', 'World Cup 1983'],
+      stadiumsPlayed: { connect: [{ id: 'wankhede' }, { id: 'narendra-modi' }] }
+    }
+  })
+
+  await prisma.player.upsert({
+    where: { id: 'dravid' },
+    update: {
+      bio: "Known as 'The Wall', Rahul Dravid's technical perfection and immense concentration made him one of the greatest Test batsmen. His selfless commitment to the team, whether as a keeper/batsman or captain, defines his legacy.\n\nDravid's ability to weather the storm in challenging conditions abroad earned him the respect of teammates and opponents alike. His partnerships with VVS Laxman and Sachin Tendulkar are legendary. After retirement, his contribution as a coach brought India the 2024 T20 World Cup, proving that his tactical mind and mentorship are as valuable as his batting.",
+      careerTimeline: [
+        { year: 1996, event: 'Stunning Test debut at Lord\'s, scoring 95.' },
+        { year: 2001, event: 'The historic 180 in the 376-run partnership with Laxman at Eden Gardens.' },
+        { year: 2004, event: 'Named ICC Player of the Year after a phenomenal run.' }
+      ],
+      stats: [
+        { label: 'International Runs', value: '24,000+' },
+        { label: 'Test Centuries', value: '36' },
+        { label: 'Catches (Test)', value: '210' }
+      ],
+      achievements: ['Padma Vibhushan', 'ICC Hall of Fame', 'T20 WC Winning Coach']
+    },
+    create: {
+      id: 'dravid',
+      name: 'Rahul Dravid',
+      sport: { connect: { id: 'cricket' } },
+      country: 'India',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/rahuldravid_gdz7fe.jpg',
+      bio: "Known as 'The Wall', Rahul Dravid's technical perfection and immense concentration made him one of the greatest Test batsmen. His selfless commitment to the team, whether as a keeper/batsman or captain, defines his legacy.\n\nDravid's ability to weather the storm in challenging conditions abroad earned him the respect of teammates and opponents alike. His partnerships with VVS Laxman and Sachin Tendulkar are legendary. After retirement, his contribution as a coach brought India the 2024 T20 World Cup, proving that his tactical mind and mentorship are as valuable as his batting.",
+      careerTimeline: [
+        { year: 1996, event: 'Stunning Test debut at Lord\'s, scoring 95.' },
+        { year: 2001, event: 'The historic 180 in the 376-run partnership with Laxman at Eden Gardens.' },
+        { year: 2004, event: 'Named ICC Player of the Year after a phenomenal run.' }
+      ],
+      stats: [
+        { label: 'International Runs', value: '24,000+' },
+        { label: 'Test Centuries', value: '36' },
+        { label: 'Catches (Test)', value: '210' }
+      ],
+      achievements: ['Padma Vibhushan', 'ICC Hall of Fame', 'T20 WC Winning Coach'],
+      stadiumsPlayed: { connect: [{ id: 'wankhede' }, { id: 'narendra-modi' }] }
+    }
+  })
+
+  await prisma.player.upsert({
+    where: { id: 'hardik' },
+    update: {
+      bio: "A true modern-day all-rounder, Hardik Pandya's explosive batting and effective pace bowling make him a vital asset in white-ball cricket. His ability to finish games and pick crucial wickets has made him a fan favorite.\n\nHardik's rise from a humble background to IPL stardom with Mumbai Indians is an inspiring tale of talent and hard work. He has evolved into a leader, captaining Gujarat Titans to an IPL title in their debut season. His match-winning performances in high-pressure ICC events have solidified his status as one of India's premier match-winners.",
+      careerTimeline: [
+        { year: 2015, event: 'Breakthrough IPL season with Mumbai Indians.' },
+        { year: 2022, event: 'Captained Gujarat Titans to the IPL title in their first year.' },
+        { year: 2024, event: 'Played a decisive role in India\'s T20 World Cup triumph.' }
+      ],
+      stats: [
+        { label: 'IPL Titles', value: '5' },
+        { label: 'T20I Strike Rate', value: '140+' },
+        { label: 'International Caps', value: '200+' }
+      ],
+      achievements: ['T20 World Cup Winner', 'IPL Winning Captain']
+    },
+    create: {
+      id: 'hardik',
+      name: 'Hardik Pandya',
+      sport: { connect: { id: 'cricket' } },
+      country: 'India',
+      image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/hardikpandya_qe9qmy.jpg',
+      bio: "A true modern-day all-rounder, Hardik Pandya's explosive batting and effective pace bowling make him a vital asset in white-ball cricket. His ability to finish games and pick crucial wickets has made him a fan favorite.\n\nHardik's rise from a humble background to IPL stardom with Mumbai Indians is an inspiring tale of talent and hard work. He has evolved into a leader, captaining Gujarat Titans to an IPL title in their debut season. His match-winning performances in high-pressure ICC events have solidified his status as one of India's premier match-winners.",
+      careerTimeline: [
+        { year: 2015, event: 'Breakthrough IPL season with Mumbai Indians.' },
+        { year: 2022, event: 'Captained Gujarat Titans to the IPL title in their first year.' },
+        { year: 2024, event: 'Played a decisive role in India\'s T20 World Cup triumph.' }
+      ],
+      stats: [
+        { label: 'IPL Titles', value: '5' },
+        { label: 'T20I Strike Rate', value: '140+' },
+        { label: 'International Caps', value: '200+' }
+      ],
+      achievements: ['T20 World Cup Winner', 'IPL Winning Captain'],
+      stadiumsPlayed: { connect: [{ id: 'wankhede' }, { id: 'narendra-modi' }] }
     }
   })
 

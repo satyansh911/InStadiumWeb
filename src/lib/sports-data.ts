@@ -22,6 +22,7 @@ export interface SportMetadata {
     url: string;
     channelName: string;
   };
+  federationUrl: string;
 }
 
 export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
@@ -62,8 +63,9 @@ export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
     ],
     fullVideoGuide: {
       url: "https://www.youtube.com/watch?v=VwII4y5vpyU",
-      channelName: "Nino's Corner"
-    }
+      channelName: "wikiHow"
+    },
+    federationUrl: "https://www.bcci.tv/"
   },
   football: {
     id: "football",
@@ -79,11 +81,31 @@ export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
       { year: "2013", event: "ISL Foundation", description: "The Indian Super League was founded, revolutionizing professional football in the country." }
     ],
     rulebook: [
-      { title: "The Goal", content: "Scored when the ball completely crosses the goal line between the posts." },
-      { title: "Offside Rule", content: "Prevents attackers from gaining an unfair advantage near the opponent's goal." },
-      { title: "Fouls & Misconduct", content: "Regulated by yellow and red cards. Direct or indirect free kicks are awarded for violations." },
-      { title: "Duration", content: "A standard match consists of two 45-minute halves with a 15-minute break." }
-    ]
+      { 
+        title: "The Goal", 
+        content: "Scored when the ball completely crosses the goal line between the posts.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775415708/The_Goal_il3bys.mp4"
+      },
+      { 
+        title: "Offside Rule", 
+        content: "Prevents attackers from gaining an unfair advantage near the opponent's goal.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775415695/Offside_Rule_lede0e.mp4"
+      },
+      { 
+        title: "Fouls & Misconduct", 
+        content: "Regulated by yellow and red cards. Direct or indirect free kicks are awarded for violations.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775415693/Fouls_iwp0sr.mp4"
+      },
+      { 
+        title: "Duration", 
+        content: "A standard match consists of two 45-minute halves with a 15-minute break." 
+      }
+    ],
+    fullVideoGuide: {
+      url: "https://www.youtube.com/watch?v=qknP-E-vPQ4",
+      channelName: "wikiHow"
+    },
+    federationUrl: "https://www.the-aiff.com/"
   },
   kabaddi: {
     id: "kabaddi",
@@ -98,11 +120,32 @@ export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
       { year: "2014", event: "Pro Kabaddi League", description: "The PKL was launched, bringing the sport into the modern commercial era." }
     ],
     rulebook: [
-      { title: "The Raid", content: "A raider enters the opponent's court chanting 'Kabaddi' and tries to touch defenders." },
-      { title: "Defense", content: "Defenders work as a chain to capture the raider and prevent them from returning." },
-      { title: "Lona", content: "Awarded when an entire team is declared 'out', giving the opponents two extra points." },
-      { title: "Revival", content: "Players are revived in the order they were sent out when their team scores a point." }
-    ]
+      { 
+        title: "The Raid", 
+        content: "An individual attacker (Raider) enters the opponent's half, chanting 'Kabaddi' without breaking their breath. They must touch at least one defender and return to their own half safely.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828648/The_Raid_ppgzbh.mp4"
+      },
+      { 
+        title: "Touch & Tag", 
+        content: "Points are scored for every defender the raider touches before returning. Defenders are 'out' and must leave the mat until a teammate scores a point to revive them.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828647/Touch_Tag_xlwhzh.mp4"
+      },
+      { 
+        title: "The Tackle", 
+        content: "Defenders (Antis) work together to trap the raider and prevent them from reaching the midline. A successful tackle earns the defending team a point and revives one of their own players.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828648/The_Tackle_cooni7.mp4"
+      },
+      { 
+        title: "Bonus Point", 
+        content: "A raider can earn an extra point by crossing the 'Bonus Line' when there are 6 or 7 defenders active on the mat, even if they don't touch any opponent.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828646/Bonus_Point_buabw1.mp4"
+      }
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/ybdGREjvluU",
+      channelName: "wikiHow"
+    },
+    federationUrl: "http://www.indiankabaddi.org/"
   },
   badminton: {
     id: "badminton",
@@ -117,11 +160,32 @@ export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
       { year: "2016", event: "Olympic Silver", description: "PV Sindhu became the first Indian woman to win an Olympic silver medal." }
     ],
     rulebook: [
-      { title: "Service", content: "Must be hit underhand and diagonally across the net." },
-      { title: "Scoring", content: "Best of three games to 21 points. A point is scored on every rally." },
-      { title: "Faults", content: "Includes touching the net, hitting the shuttle out, or a player hitting it twice." },
-      { title: "The Let", content: "Called for accidental interference or if the shuttle gets stuck in the net." }
-    ]
+      { 
+        title: "The Serve", 
+        content: "Must be hit underhand and diagonally into the opponent's service court. In professional play, the shuttle must be hit from below the server's waist height.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887071/The_Serve_gcwufh.mp4"
+      },
+      { 
+        title: "Rally Scoring", 
+        content: "A point is won on every serve, regardless of who is serving. Matches are usually best of three games, with each game played to 21 points.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887070/Rally_Scoring_anf646.mp4"
+      },
+      { 
+        title: "Let", 
+        content: "A call made by the umpire to halt play when an unforeseen accident or distraction occurs. The point is replayed.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887072/Let_kuljld.mp4"
+      },
+      { 
+        title: "Faults", 
+        content: "Includes the shuttle landing outside boundaries, failing to pass over the net, or touching the net with the racket or body.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887070/Faults_fmxiam.mp4"
+      }
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/tAS7rOKtpgQ",
+      channelName: "Mr. Animate"
+    },
+    federationUrl: "https://www.badmintonindia.org/"
   },
   tennis: {
     id: "tennis",
@@ -136,11 +200,32 @@ export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
       { year: "2015", event: "Sania Mirza's Peak", description: "Sania Mirza became the World No. 1 in women's doubles." }
     ],
     rulebook: [
-      { title: "The Serve", content: "Starts behind the baseline. A 'let' is called if the ball hits the net and lands in." },
-      { title: "Deuce", content: "A tie at 40-40 requires winning two consecutive points to take the game." },
-      { title: "Sets & Games", content: "Matches are usually best of 3 or 5 sets, with 6 games to win a set." },
-      { title: "Tie-Break", content: "Played at 6-6 in a set to decide the winner by reaching 7 points first." }
-    ]
+      { 
+        title: "Game/Set/Match", 
+        content: "The scoring hierarchy. Four points win a game (15, 30, 40, Game), six games win a set, and two or three sets win the match.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887287/GameSetMatch_cu7iir.mp4"
+      },
+      { 
+        title: "The Serve", 
+        content: "Starting the point from behind the baseline. If it hits the net but lands in the correct service box, it's a 'Let' (replay).",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887285/The_Serve_mq2jda.mp4"
+      },
+      { 
+        title: "The Deuce", 
+        content: "A tie at 40-all. A player must win two consecutive points (Advantage and then Game Point) to win the game.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887286/Deuce_s3ab9y.mp4"
+      },
+      { 
+        title: "Baseline Play", 
+        content: "The strategic exchange of groundstrokes from the back of the court. Players use topspin and slice to outmaneuver opponents.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887285/Baseline_Play_vjange.mp4"
+      }
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/zcagGHQhcMI",
+      channelName: "wikiHow"
+    },
+    federationUrl: "https://www.aitatennis.com/"
   },
   hockey: {
     id: "hockey",
@@ -155,10 +240,31 @@ export const ADDITIONAL_SPORTS_DATA: Record<string, SportMetadata> = {
       { year: "2021", event: "Tokyo Bronze", description: "The Indian team ended a 41-year Olympic medal drought with a bronze." }
     ],
     rulebook: [
-      { title: "Penalty Corner", content: "Awarded for defensive fouls in the circle. A crucial scoring opportunity." },
-      { title: "The Sticks", content: "Players can only use the flat side of the stick to play the ball." },
-      { title: "No Body Contact", content: "Players cannot use their feet or body to stop or move the ball." },
-      { title: "Green/Yellow Cards", content: "Time-bound suspensions for fouls, maintaining the game's high intensity." }
-    ]
+      { 
+        title: "Penalty Corner", 
+        content: "Awarded for defensive fouls inside the circle. The ball is pushed from the backline to attackers at the top of the circle.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888147/Penalty_Corner_qursvq.mp4"
+      },
+      { 
+        title: "The Cards", 
+        content: "Green (2 min suspension), Yellow (5-10 min suspension), and Red (Permanent exclusion) are used for discipline.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888143/The_Cards_gvz9id.mp4"
+      },
+      { 
+        title: "No-Feet Rule", 
+        content: "Players (except goalkeepers inside the circle) are not allowed to use their feet or any other part of their body to play the ball.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888161/No_Feet_Rule_getc6d.mp4"
+      },
+      { 
+        title: "Dangerous Play", 
+        content: "Includes lifting the ball into an opponent, high-sticking, or any action that threatens player safety.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888142/Dangerous_Play_xw8lqt.mp4"
+      }
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/KUnLgiX44BQ",
+      channelName: "wikiHow"
+    },
+    federationUrl: "https://www.hockeyindia.org/"
   }
 };

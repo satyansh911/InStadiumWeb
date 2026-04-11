@@ -1,9 +1,10 @@
 "use client";
 
-import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { OSM_CONFIG } from "@/lib/maps";
 import { useEffect, useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Navigation, ExternalLink } from "lucide-react";
+import { OSM_CONFIG } from "@/lib/maps";
+
 // Fix for default marker icon not appearing in Leaflet with Next.js
 const fixLeafletIcon = () => {
   if (typeof window !== "undefined") {
@@ -38,8 +39,23 @@ export default function StadiumMap({ lat, lng, stadiumName }: StadiumMapProps) {
     </div>
   );
 
+  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+
   return (
-    <div className="w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-rose/10 z-10">
+    <div className="relative group w-full h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-rose/10 z-10 transition-all duration-700">
+      {/* Floating Directions Button */}
+      <div className="absolute top-6 right-6 z-[1000] pointer-events-auto">
+        <a 
+          href={googleMapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 px-6 py-3 bg-rose text-blush rounded-xl font-sans text-[10px] tracking-[0.2em] uppercase font-bold shadow-2xl shadow-rose/40 hover:bg-plum hover:scale-105 transition-all duration-500 backdrop-blur-sm"
+        >
+          <Navigation size={14} className="fill-blush/20" />
+          Get Directions
+        </a>
+      </div>
+
       <MapContainer
         center={[lat, lng]}
         zoom={15}
@@ -52,9 +68,18 @@ export default function StadiumMap({ lat, lng, stadiumName }: StadiumMapProps) {
         />
         <Marker position={[lat, lng]}>
           <Popup>
-            <div className="font-sans">
-              <p className="font-bold text-plum">{stadiumName}</p>
-              <p className="text-xs text-plum/60">Verified Sports Arena</p>
+            <div className="p-3 min-w-[200px]">
+              <span className="font-sans text-[8px] tracking-[0.4em] uppercase text-rose font-bold block mb-2">Location Verified</span>
+              <p className="font-sans text-sm font-bold text-plum mb-3 leading-tight">{stadiumName}</p>
+              <a 
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-2 bg-plum/5 hover:bg-rose/10 text-rose font-sans text-[9px] tracking-widest uppercase font-bold rounded-lg transition-colors border border-rose/10"
+              >
+                <ExternalLink size={12} />
+                Open in Maps
+              </a>
             </div>
           </Popup>
         </Marker>

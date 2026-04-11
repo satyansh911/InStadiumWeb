@@ -38,7 +38,7 @@ const SPORTS_DATA: Record<string, { description: string, rulebook: any[], fullVi
     ],
     fullVideoGuide: {
       url: "https://www.youtube.com/watch?v=VwII4y5vpyU",
-      channelName: "Nino's Corner"
+      channelName: "wikiHow"
     }
   },
   Football: {
@@ -46,105 +46,145 @@ const SPORTS_DATA: Record<string, { description: string, rulebook: any[], fullVi
     rulebook: [
       { 
         title: "The Goal", 
-        content: "The main objective is to drive the ball into the opponent's net. A goal is scored when the entire ball crosses the goal line between the posts and under the crossbar." 
+        content: "The main objective is to drive the ball into the opponent's net. A goal is scored when the entire ball crosses the goal line between the posts and under the crossbar.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775415708/The_Goal_il3bys.mp4"
       },
       { 
         title: "Fouls & Cards", 
-        content: "Physical contact is regulated. Reckless play or unsporting behavior results in a Yellow Card (warning) or a Red Card (ejection). Professional fouls can lead to direct free kicks or penalties." 
+        content: "Physical contact is regulated. Reckless play or unsporting behavior results in a Yellow Card (warning) or a Red Card (ejection). Professional fouls can lead to direct free kicks or penalties.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775415693/Fouls_iwp0sr.mp4"
       },
       { 
         title: "Offside Rule", 
-        content: "A strategic rule preventing 'goal-hanging'. An attacking player must have at least two opponents (usually the keeper and one defender) between them and the goal line when the ball is played to them." 
+        content: "A strategic rule preventing 'goal-hanging'. An attacking player must have at least two opponents (usually the keeper and one defender) between them and the goal line when the ball is played to them.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775415695/Offside_Rule_lede0e.mp4"
       },
       { 
         title: "Corner Kicks", 
-        content: "Awarded when the defending team is the last to touch the ball before it crosses their own goal line (excluding goals). It's a prime opportunity for set-piece specialists to create scoring chances." 
+        content: "Awarded when the defending team is the last to touch the ball before it crosses their own goal line (excluding goals). It's a prime opportunity for set-piece specialists to create scoring chances.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775415696/Corner_Kicks_mxxpx4.mp4"
       }
-    ]
+    ],
+    fullVideoGuide: {
+      url: "https://www.youtube.com/watch?v=qknP-E-vPQ4",
+      channelName: "wikiHow"
+    }
   },
   Kabaddi: {
     description: "An ancient Indian contact sport that requires agility, lung capacity, and immense strength. It's a thrilling 40-minute battle where individual brilliance meets collective defensive strategy.",
     rulebook: [
       { 
         title: "The Raid", 
-        content: "An individual attacker (Raider) enters the opponent's half, chanting 'Kabaddi' without breaking their breath. They must touch at least one defender and return to their own half safely." 
+        content: "An individual attacker (Raider) enters the opponent's half, chanting 'Kabaddi' without breaking their breath. They must touch at least one defender and return to their own half safely.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828648/The_Raid_ppgzbh.mp4"
       },
       { 
         title: "Touch & Tag", 
-        content: "Points are scored for every defender the raider touches before returning. Defenders are 'out' and must leave the mat until a teammate scores a point to revive them." 
+        content: "Points are scored for every defender the raider touches before returning. Defenders are 'out' and must leave the mat until a teammate scores a point to revive them.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828647/Touch_Tag_xlwhzh.mp4"
       },
       { 
         title: "The Tackle", 
-        content: "Defenders (Antis) work together to trap the raider and prevent them from reaching the midline. A successful tackle earns the defending team a point and revives one of their own players." 
+        content: "Defenders (Antis) work together to trap the raider and prevent them from reaching the midline. A successful tackle earns the defending team a point and revives one of their own players.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828648/The_Tackle_cooni7.mp4"
       },
       { 
         title: "Bonus Point", 
-        content: "A raider can earn an extra point by crossing the 'Bonus Line' when there are 6 or 7 defenders active on the mat, even if they don't touch any opponent." 
+        content: "A raider can earn an extra point by crossing the 'Bonus Line' when there are 6 or 7 defenders active on the mat, even if they don't touch any opponent.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775828646/Bonus_Point_buabw1.mp4"
       }
-    ]
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/ybdGREjvluU",
+      channelName: "wikiHow"
+    }
   },
   Badminton: {
     description: "A fast-paced racket sport requiring lightning-fast reflexes and delicate touch. India has emerged as a global superpower in badminton, with numerous Olympic and World Championship medals.",
     rulebook: [
       { 
         title: "The Serve", 
-        content: "Must be delivered underhand and diagonally into the opponent's service court. In professional play, the shuttle must be hit from below the server's waist height." 
+        content: "Must be hit underhand and diagonally into the opponent's service court. In professional play, the shuttle must be hit from below the server's waist height.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887071/The_Serve_gcwufh.mp4"
       },
       { 
         title: "Rally Scoring", 
-        content: "A point is won on every serve, regardless of who is serving. Matches are usually best of three games, with each game played to 21 points (must lead by 2, capped at 30)." 
+        content: "A point is won on every serve, regardless of who is serving. Matches are usually best of three games, with each game played to 21 points.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887070/Rally_Scoring_anf646.mp4"
       },
       { 
         title: "Let", 
-        content: "A call made by the umpire to halt play when an unforeseen accident or distraction occurs. The point is replayed, and no change is made to the score or service order." 
+        content: "A call made by the umpire to halt play when an unforeseen accident or distraction occurs. The point is replayed.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887072/Let_kuljld.mp4"
       },
       { 
         title: "Faults", 
-        content: "Includes the shuttle landing outside boundaries, failing to pass over the net, touching the net with the racket or body, or being hit twice by the same player/team." 
+        content: "Includes the shuttle landing outside boundaries, failing to pass over the net, or touching the net with the racket or body.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887070/Faults_fmxiam.mp4"
       }
-    ]
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/tAS7rOKtpgQ",
+      channelName: "Mr. Animate"
+    }
   },
   Tennis: {
     description: "The epitome of individual sporting excellence played on various surfaces. From clay courts to grass, tennis in India has a legacy of producing world-class doubles specialists.",
     rulebook: [
       { 
         title: "Game/Set/Match", 
-        content: "The scoring hierarchy. Four points win a game (15, 30, 40, Game), six games win a set, and two or three sets win the match. 'Deuce' occurs at 40-40, requiring a two-point lead." 
+        content: "The scoring hierarchy. Four points win a game (15, 30, 40, Game), six games win a set, and two or three sets win the match. 'Deuce' occurs at 40-40, requiring a two-point lead.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887287/GameSetMatch_cu7iir.mp4"
       },
       { 
         title: "The Serve", 
-        content: "Starting the point from behind the baseline. If it hits the net but lands in the correct service box, it's a 'Let' (replay). Missing twice results in a Double Fault and loss of the point." 
+        content: "Starting the point from behind the baseline. If it hits the net but lands in the correct service box, it's a 'Let' (replay). Missing twice results in a Double Fault and loss of the point.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887285/The_Serve_mq2jda.mp4"
       },
       { 
         title: "The Deuce", 
-        content: "A Tie at 40-all. A player must win two consecutive points (Advantage and then Game Point) to win the game. This creates the most high-pressure moments in the sport." 
+        content: "A Tie at 40-all. A player must win two consecutive points (Advantage and then Game Point) to win the game. This creates the most high-pressure moments in the sport.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887286/Deuce_s3ab9y.mp4"
       },
       { 
         title: "Baseline Play", 
-        content: "The strategic exchange of groundstrokes from the back of the court. Players use topspin, slice, and varying depths to outmaneuver opponents and create winning opportunities." 
+        content: "The strategic exchange of groundstrokes from the back of the court. Players use topspin, slice, and varying depths to outmaneuver opponents and create winning opportunities.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775887285/Baseline_Play_vjange.mp4"
       }
-    ]
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/zcagGHQhcMI",
+      channelName: "wikiHow"
+    }
   },
   Hockey: {
     description: "India's national glory sport with a legendary history of 8 Olympic Gold medals. Modern field hockey is a high-intensity game played on synthetic turf at breakneck speeds.",
     rulebook: [
       { 
         title: "Penalty Corner", 
-        content: "The most vital set-piece, awarded for defensive fouls inside the circle. The ball is pushed from the baseline to the top of the 'D', followed by a high-speed drag-flick or hit toward the goal." 
+        content: "Awarded for defensive fouls inside the circle. The ball is pushed from the backline to attackers at the top of the circle.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888147/Penalty_Corner_qursvq.mp4"
       },
       { 
         title: "The Cards", 
-        content: "Disciplinary actions: Green Card (2-minute suspension), Yellow Card (minimum 5-minute suspension), and Red Card (permanent removal from the match)." 
+        content: "Green (2 min suspension), Yellow (5-10 min suspension), and Red (Permanent exclusion) are used for discipline.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888143/The_Cards_gvz9id.mp4"
       },
       { 
         title: "No-Feet Rule", 
-        content: "Only the goalkeeper (within the circle) can use their body or feet to stop the ball. For outfield players, any contact between the ball and feet is a foul, often resulting in a change of possession." 
+        content: "Players (except goalkeepers inside the circle) are not allowed to use their feet or any other part of their body to play the ball.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888161/No_Feet_Rule_getc6d.mp4"
       },
       { 
         title: "Dangerous Play", 
-        content: "Refers to lifting the ball into players or hitting it wildly. High balls must be controlled correctly, and 'sticks' (lifting the stick above head height) is restricted for safety." 
+        content: "Includes lifting the ball into an opponent, high-sticking, or any action that threatens player safety.",
+        videoUrl: "https://res.cloudinary.com/daud2uqqf/video/upload/v1775888142/Dangerous_Play_xw8lqt.mp4"
       }
-    ]
+    ],
+    fullVideoGuide: {
+      url: "https://youtu.be/KUnLgiX44BQ",
+      channelName: "wikiHow"
+    }
   }
 };
 
@@ -196,7 +236,7 @@ export default function SportsClient({ initialSports, initialStadiums }: { initi
       </section>
 
       {/* Sport Selector */}
-      <section className="sticky top-[80px] z-40 bg-blush/90 backdrop-blur-md border-y border-rose/10 py-8 px-6 overflow-x-auto scroller-hide">
+      <section className="sticky top-[80px] z-40 bg-blush/90 backdrop-blur-md border-y border-rose/10 py-8 px-6 overflow-x-auto scrollbar-hide">
         <div className="max-w-7xl mx-auto flex gap-12 items-center justify-between min-w-max">
           {Object.keys(SPORTS_DATA).map((sport) => (
             <button

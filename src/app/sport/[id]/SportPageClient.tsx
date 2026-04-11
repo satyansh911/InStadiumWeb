@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SportHero from "@/components/sports/SportHero";
@@ -7,8 +8,10 @@ import HistoryTimeline from "@/components/sports/HistoryTimeline";
 import Rulebook from "@/components/stadium/Rulebook";
 import AffiliatedStadiums from "@/components/sports/AffiliatedStadiums";
 import IconicPlayers from "@/components/sports/IconicPlayers";
+import BookingModal from "@/components/sports/BookingModal";
 import ScrollReveal from "@/components/ScrollReveal";
 import { SportMetadata } from "@/lib/sports-data";
+import { ExternalLink } from "lucide-react";
 
 interface SportPageClientProps {
   sport: any;
@@ -16,6 +19,12 @@ interface SportPageClientProps {
 }
 
 export default function SportPageClient({ sport, metadata }: SportPageClientProps) {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  const handleContactFederation = () => {
+    window.open(metadata.federationUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <main className="min-h-screen bg-blush selection:bg-rose selection:text-blush">
       <Navbar />
@@ -71,16 +80,29 @@ export default function SportPageClient({ sport, metadata }: SportPageClientProp
               Witness the <span className="italic">passion</span> on India&apos;s grandest stages.
             </h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-              <button className="px-10 py-4 bg-rose text-blush rounded-full font-sans text-xs tracking-[0.3em] uppercase hover:bg-plum transition-all duration-500 shadow-xl shadow-rose/20">
+              <button 
+                onClick={() => setIsBookingOpen(true)}
+                className="px-10 py-4 bg-rose text-blush rounded-full font-sans text-xs tracking-[0.3em] uppercase hover:bg-plum transition-all duration-500 shadow-xl shadow-rose/20"
+              >
                 Book Stadium Tour
               </button>
-              <button className="px-10 py-4 border border-plum/10 text-plum rounded-full font-sans text-xs tracking-[0.3em] uppercase hover:bg-plum hover:text-blush transition-all duration-500">
+              <button 
+                onClick={handleContactFederation}
+                className="px-10 py-4 border border-plum/10 text-plum rounded-full font-sans text-xs tracking-[0.3em] uppercase hover:bg-plum hover:text-blush transition-all duration-500 flex items-center gap-3 group"
+              >
                 Contact Federation
+                <ExternalLink size={14} className="text-rose/40 group-hover:text-blush/60 transition-colors" />
               </button>
             </div>
           </div>
         </ScrollReveal>
       </section>
+
+      <BookingModal 
+        isOpen={isBookingOpen} 
+        onClose={() => setIsBookingOpen(false)} 
+        sportName={metadata.name} 
+      />
 
       <Footer />
     </main>

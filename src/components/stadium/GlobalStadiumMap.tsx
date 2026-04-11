@@ -77,12 +77,22 @@ export default function GlobalStadiumMap({ stadiums }: GlobalStadiumMapProps) {
                 <p className="text-[10px] text-plum/60 mb-4 flex items-center gap-1 italic">
                   <MapPin size={10} /> {stadium.city}
                 </p>
-                <Link 
-                  href={`/stadium/${stadium.id}`}
-                  className="inline-block w-full py-2 bg-rose text-blush text-center text-[9px] uppercase tracking-[0.2em] rounded-md hover:bg-plum transition-colors duration-300"
-                >
-                  Explore Venue
-                </Link>
+                <div className="flex flex-col gap-2 mt-4">
+                  <Link 
+                    href={`/stadium/${stadium.id}`}
+                    className="w-full py-2 bg-rose text-blush text-center text-[9px] uppercase tracking-[0.2em] rounded-md hover:bg-plum transition-colors duration-300"
+                  >
+                    Explore Venue
+                  </Link>
+                  <a 
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${stadium.latitude},${stadium.longitude}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2 bg-plum/5 text-rose text-center text-[9px] uppercase tracking-[0.2em] rounded-md hover:bg-rose/10 transition-colors duration-300 border border-rose/5"
+                  >
+                    Get Directions
+                  </a>
+                </div>
               </div>
             </Popup>
           </Marker>

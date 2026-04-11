@@ -60,9 +60,9 @@ export default function StadiumsPage() {
       </section>
 
       {/* Search & Filter Bar */}
-      <section className="sticky top-[80px] z-40 bg-blush/80 backdrop-blur-md border-y border-rose/10 py-6 px-6">
+      <section className="sticky top-[72px] z-40 bg-blush/80 backdrop-blur-md border-b border-rose/10 py-6 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 items-center justify-between">
-          <div className="relative w-full md:max-w-md">
+          <div className="relative w-full md:max-w-xs group">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-rose/40" size={18} />
             <input
               type="text"
@@ -73,7 +73,7 @@ export default function StadiumsPage() {
             />
           </div>
 
-          <div className="flex items-center gap-3 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto scrollbar-hide">
+          <div className="flex items-center gap-4 overflow-x-auto pb-2 md:pb-0 w-full md:w-auto scrollbar-hide">
             <Filter size={16} className="text-rose shrink-0" />
             {sports.map((sport) => (
               <button

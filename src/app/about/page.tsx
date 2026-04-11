@@ -125,15 +125,22 @@ export default function AboutPage() {
                 name: "Satyansh Singh",
                 role: "Founding Creator",
                 image: "/images/team/satyanshsingh.jpg",
+                linkedin: "https://www.linkedin.com/in/satyansh-singh-b27058292/",
               },
               {
                 name: "Prakshit Suthar",
                 role: "Founding Creator",
                 image: "/images/team/prakshitsuthar.jpeg",
+                linkedin: "https://www.linkedin.com/in/prakshitsuthar/",
               },
             ].map((member, index) => (
                <ScrollReveal key={member.name} delay={(index % 4) as 0 | 1 | 2 | 3} className="group cursor-default">
-                 <div className="relative w-full aspect-4/5 mb-8 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-3xl overflow-hidden border border-plum/5">
+                 <a 
+                   href={member.linkedin}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="block mb-8 relative w-full aspect-4/5 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-3xl overflow-hidden border border-plum/5"
+                 >
                     <Image 
                       src={member.image}
                       alt={member.name}
@@ -141,10 +148,17 @@ export default function AboutPage() {
                       unoptimized
                       className="object-cover transition-all duration-700 scale-110 group-hover:scale-100"
                     />
-                 </div>
+                 </a>
                  <div className="space-y-1">
                    <h3 className="font-sans text-[11px] tracking-[0.2em] uppercase text-plum/40 group-hover:text-rose transition-colors duration-300 font-bold">{member.role}</h3>
-                   <p className="text-3xl font-light text-plum italic">{member.name}</p>
+                   <a 
+                     href={member.linkedin}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="text-3xl font-light text-plum italic hover:text-rose transition-colors duration-300 block w-fit"
+                   >
+                     {member.name}
+                   </a>
                  </div>
                </ScrollReveal>
             ))}
@@ -158,7 +172,12 @@ export default function AboutPage() {
         </ScrollReveal>
 
         <ScrollReveal className="group cursor-default max-w-md">
-          <div className="relative w-full aspect-4/5 mb-8 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-3xl overflow-hidden border border-plum/5">
+          <a 
+            href="https://www.linkedin.com/in/dr-mukesh-mann-b090ba294/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block w-full aspect-4/5 mb-8 grayscale group-hover:grayscale-0 transition-all duration-700 rounded-3xl overflow-hidden border border-plum/5"
+          >
             <Image
               src="/images/team/facultyphoto.jpg"
               alt="Faculty Mentor"
@@ -166,10 +185,17 @@ export default function AboutPage() {
               unoptimized
               className="object-cover transition-all duration-700 scale-110 group-hover:scale-100"
             />
-          </div>
+          </a>
           <div className="space-y-1">
             <h3 className="font-sans text-[11px] tracking-[0.2em] uppercase text-plum/40 group-hover:text-rose transition-colors duration-300 font-bold">Faculty Mentor</h3>
-            <p className="text-3xl font-light text-plum italic">Dr. Mukesh Mann</p>
+            <a 
+              href="https://www.linkedin.com/in/dr-mukesh-mann-b090ba294/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl font-light text-plum italic hover:text-rose transition-colors duration-300 block w-fit"
+            >
+              Dr. Mukesh Mann
+            </a>
             <p className="text-sm font-sans text-plum/60">Head Of Department</p>
             <p className="text-sm font-sans text-plum/60">Information Technology</p>
           </div>

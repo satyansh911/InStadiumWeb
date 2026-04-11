@@ -80,7 +80,7 @@ export default function Rulebook({ sportName, rules, fullVideoGuide }: RulebookP
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover pointer-events-none scale-[1.1] origin-top-left"
+                      className="w-full h-full object-cover pointer-events-none"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
                     <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-rose text-[8px] font-sans tracking-[0.2em] uppercase text-blush shadow-lg border border-white/10">

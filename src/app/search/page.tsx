@@ -95,9 +95,9 @@ export default function SearchPage() {
       </section>
 
       {/* Controls Bar */}
-      <section className="sticky top-[75px] z-40 bg-white/80 backdrop-blur-xl border-b border-rose/10 py-5 px-6">
+      <section className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-xl border-b border-rose/10 py-5 px-6">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center justify-between">
-            <div className="relative w-full lg:max-w-xl group">
+            <div className="relative w-full lg:max-w-md group">
                 <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-rose/30 group-focus-within:text-rose transition-colors duration-300" size={20} />
                 <input
                     type="text"
