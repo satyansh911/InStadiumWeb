@@ -32,10 +32,10 @@ export default function PlayerHero({ player }: PlayerHeroProps) {
           <div className="order-2 lg:order-1">
             <ScrollReveal>
               <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-rose font-bold mb-6 block">
-                The Legend of {player.sport.name}
+                The Legend of {player.sport?.name || "Sport"}
               </span>
               <h1 className="text-6xl md:text-8xl font-light text-blush mb-8 leading-tight">
-                {player.name.split(' ').map((word, i) => (
+                {(player.name || "Legendary Player").split(' ').map((word, i) => (
                   <span key={i} className={i === 1 ? "italic block" : "block"}>
                     {word}
                   </span>

@@ -35,6 +35,9 @@ async function getPlayer(id: string) {
   const fullPlayer = {
     ...playerWithRelations,
     ...playerBase,
+    sport: (playerWithRelations as any)?.Sport || { name: "Sport" },
+    name: playerBase?.name || (playerWithRelations as any)?.name || "Legendary Player",
+    bio: playerBase?.bio || (playerWithRelations as any)?.bio || "",
   };
 
   return fullPlayer;
@@ -48,13 +51,13 @@ export default async function PlayerPage({ params }: { params: Promise<{ id: str
     notFound();
   }
 
-  // Fallback map if stadiumsPlayed is empty or needs mapping
-  const stadiums = player.stadiumsPlayed.map((s: any) => ({
-    id: s.id,
-    name: s.name,
-    city: s.city,
-    image: (s.galleryImages as any)?.[0]?.url || '/images/stadium.jpg'
-  }));
+  // Map the join-table relations to the stadium objects
+  const stadiums = (player.PlayerToStadium || []).map((pts: any) => ({
+    id: pts.Stadium?.id,
+    name: pts.Stadium?.name,
+    city: pts.Stadium?.city,
+    image: (pts.Stadium?.galleryImages as any)?.[0]?.url || '/images/stadium.jpg'
+  })).filter((s: any) => s.id);
 
   return (
     <main className="min-h-screen bg-blush selection:bg-rose selection:text-blush">
