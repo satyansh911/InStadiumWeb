@@ -247,10 +247,11 @@ export async function POST(req: NextRequest) {
       let sortedStadiums = stadiums;
       if (location) {
         sortedStadiums = stadiums
+          .filter(s => s.latitude !== null && s.longitude !== null)
           .map(s => {
             const dist = Math.sqrt(
-              Math.pow(s.latitude - location.lat, 2) + 
-              Math.pow(s.longitude - location.lng, 2)
+              Math.pow((s.latitude as number) - location.lat, 2) + 
+              Math.pow((s.longitude as number) - location.lng, 2)
             );
             return { ...s, dist };
           })
@@ -293,7 +294,7 @@ export async function POST(req: NextRequest) {
         const matches = s.upcomingMatches as any[];
         if (matches && Array.isArray(matches)) {
           matches.forEach(m => {
-            if (m.tournament?.includes("IPL") && m.date >= "2026-04-12") {
+            if (m.date && m.tournament?.includes("IPL") && m.date >= "2026-04-12") {
               allMatches.push({
                 teams: m.teams,
                 date: m.date,
