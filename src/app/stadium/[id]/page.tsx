@@ -10,7 +10,6 @@ import TimelineSection from "@/components/stadium/TimelineSection";
 import MatchesSection from "@/components/stadium/MatchesSection";
 import PlayersSection from "@/components/stadium/PlayersSection";
 import NearbyStadiums from "@/components/stadium/NearbyStadiums";
-import ChatbotWidget from "@/components/stadium/ChatbotWidget";
 import StadiumMapWrapper from "@/components/stadium/StadiumMapWrapper";
 
 
@@ -134,7 +133,6 @@ export default async function StadiumPage({ params }: { params: Promise<{ id: st
 
       <Footer />
       
-      <ChatbotWidget stadiumName={stadium.name} />
     </main>
   );
 }

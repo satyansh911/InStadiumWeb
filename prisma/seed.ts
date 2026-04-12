@@ -493,7 +493,7 @@ async function main() {
       ],
       tournaments: [
         { name: 'Senior National Ranking Series', year: 2022, winner: 'Multiple Champions' },
-        { name: 'Junior National Camp Showcase', year: 2024, winner: 'Academy Prospects' }
+        { name: 'Junior National Camp Showcase', year: 2026, winner: 'Academy Prospects' }
       ],
       upcomingMatches: [
         { teams: 'Karnataka Smashers vs Hyderabad Racquets', date: '2026-07-08', tournament: 'Indian Badminton League' },
@@ -538,7 +538,7 @@ async function main() {
       ],
       tournaments: [
         { name: 'Senior National Ranking Series', year: 2022, winner: 'Multiple Champions' },
-        { name: 'Junior National Camp Showcase', year: 2024, winner: 'Academy Prospects' }
+        { name: 'Junior National Camp Showcase', year: 2026, winner: 'Academy Prospects' }
       ],
       upcomingMatches: [
         { teams: 'Karnataka Smashers vs Hyderabad Racquets', date: '2026-07-08', tournament: 'Indian Badminton League' },
@@ -586,7 +586,7 @@ async function main() {
       ],
       tournaments: [
         { name: 'Davis Cup', year: 2023, winner: 'International Tie Rotation' },
-        { name: 'Delhi Open', year: 2024, winner: 'Tour Champion' }
+        { name: 'Delhi Open', year: 2026, winner: 'Tour Champion' }
       ],
       upcomingMatches: [
         { teams: 'India vs Japan', date: '2026-09-12', tournament: 'Davis Cup' },
@@ -631,7 +631,7 @@ async function main() {
       ],
       tournaments: [
         { name: 'Davis Cup', year: 2023, winner: 'International Tie Rotation' },
-        { name: 'Delhi Open', year: 2024, winner: 'Tour Champion' }
+        { name: 'Delhi Open', year: 2026, winner: 'Tour Champion' }
       ],
       upcomingMatches: [
         { teams: 'India vs Japan', date: '2026-09-12', tournament: 'Davis Cup' },
@@ -729,7 +729,7 @@ async function main() {
         { year: 2008, event: 'Hattrick in the AFC Challenge Cup final to help India qualify for Asia Cup.' },
         { year: 2018, event: 'Earned his 100th international cap and called upon fans to fill the stadiums.' },
         { year: 2021, event: 'Overtook legends in the international goalscoring charts.' },
-        { year: 2024, event: 'Announced retirement from international football, leaving a massive legacy.' }
+        { year: 2026, event: 'Announced retirement from international football, leaving a massive legacy.' }
       ],
       stats: [
         { label: 'International Goals', value: '94' },
@@ -749,7 +749,7 @@ async function main() {
         { year: 2008, event: 'Hattrick in the AFC Challenge Cup final to help India qualify for Asia Cup.' },
         { year: 2018, event: 'Earned his 100th international cap and called upon fans to fill the stadiums.' },
         { year: 2021, event: 'Overtook legends in the international goalscoring charts.' },
-        { year: 2024, event: 'Announced retirement from international football, leaving a massive legacy.' }
+        { year: 2026, event: 'Announced retirement from international football, leaving a massive legacy.' }
       ],
       stats: [
         { label: 'International Goals', value: '94' },
@@ -956,7 +956,7 @@ async function main() {
   await prisma.player.upsert({
     where: { id: 'dravid' },
     update: {
-      bio: "Known as 'The Wall', Rahul Dravid's technical perfection and immense concentration made him one of the greatest Test batsmen. His selfless commitment to the team, whether as a keeper/batsman or captain, defines his legacy.\n\nDravid's ability to weather the storm in challenging conditions abroad earned him the respect of teammates and opponents alike. His partnerships with VVS Laxman and Sachin Tendulkar are legendary. After retirement, his contribution as a coach brought India the 2024 T20 World Cup, proving that his tactical mind and mentorship are as valuable as his batting.",
+      bio: "Known as 'The Wall', Rahul Dravid's technical perfection and immense concentration made him one of the greatest Test batsmen. His selfless commitment to the team, whether as a keeper/batsman or captain, defines his legacy.\n\nDravid's ability to weather the storm in challenging conditions abroad earned him the respect of teammates and opponents alike. His partnerships with VVS Laxman and Sachin Tendulkar are legendary. After retirement, his contribution as a coach brought India the 2026 T20 World Cup, proving that his tactical mind and mentorship are as valuable as his batting.",
       careerTimeline: [
         { year: 1996, event: 'Stunning Test debut at Lord\'s, scoring 95.' },
         { year: 2001, event: 'The historic 180 in the 376-run partnership with Laxman at Eden Gardens.' },
@@ -975,7 +975,7 @@ async function main() {
       sportId: 'cricket',
       country: 'India',
       image: 'https://res.cloudinary.com/daud2uqqf/image/upload/v1775901627/rahuldravid_gdz7fe.jpg',
-      bio: "Known as 'The Wall', Rahul Dravid's technical perfection and immense concentration made him one of the greatest Test batsmen. His selfless commitment to the team, whether as a keeper/batsman or captain, defines his legacy.\n\nDravid's ability to weather the storm in challenging conditions abroad earned him the respect of teammates and opponents alike. His partnerships with VVS Laxman and Sachin Tendulkar are legendary. After retirement, his contribution as a coach brought India the 2024 T20 World Cup, proving that his tactical mind and mentorship are as valuable as his batting.",
+      bio: "Known as 'The Wall', Rahul Dravid's technical perfection and immense concentration made him one of the greatest Test batsmen. His selfless commitment to the team, whether as a keeper/batsman or captain, defines his legacy.\n\nDravid's ability to weather the storm in challenging conditions abroad earned him the respect of teammates and opponents alike. His partnerships with VVS Laxman and Sachin Tendulkar are legendary. After retirement, his contribution as a coach brought India the 2026 T20 World Cup, proving that his tactical mind and mentorship are as valuable as his batting.",
       careerTimeline: [
         { year: 1996, event: 'Stunning Test debut at Lord\'s, scoring 95.' },
         { year: 2001, event: 'The historic 180 in the 376-run partnership with Laxman at Eden Gardens.' },
@@ -997,7 +997,7 @@ async function main() {
       careerTimeline: [
         { year: 2015, event: 'Breakthrough IPL season with Mumbai Indians.' },
         { year: 2022, event: 'Captained Gujarat Titans to the IPL title in their first year.' },
-        { year: 2024, event: 'Played a decisive role in India\'s T20 World Cup triumph.' }
+        { year: 2026, event: 'Played a decisive role in India\'s T20 World Cup triumph.' }
       ],
       stats: [
         { label: 'IPL Titles', value: '5' },
@@ -1016,7 +1016,7 @@ async function main() {
       careerTimeline: [
         { year: 2015, event: 'Breakthrough IPL season with Mumbai Indians.' },
         { year: 2022, event: 'Captained Gujarat Titans to the IPL title in their first year.' },
-        { year: 2024, event: 'Played a decisive role in India\'s T20 World Cup triumph.' }
+        { year: 2026, event: 'Played a decisive role in India\'s T20 World Cup triumph.' }
       ],
       stats: [
         { label: 'IPL Titles', value: '5' },

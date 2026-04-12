@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import "./chatbot.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -55,6 +56,8 @@ export const metadata: Metadata = {
   }
 };
 
+import AIChatbot from "@/components/chat/AIChatbot";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -66,6 +69,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${playfair.variable} antialiased`}
       >
         {children}
+        <AIChatbot />
       </body>
     </html>
   );

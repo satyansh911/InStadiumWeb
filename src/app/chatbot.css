@@ -1,0 +1,31 @@
+:root {
+  --chat-blush: #EEEBDD;
+  --chat-rose: #D8B4A0;
+  --chat-plum: #1B1717;
+  --chat-muted: #6E7A89;
+  --chat-red: #810000;
+  --chat-red-light: rgba(129, 0, 0, 0.1);
+  --chat-red-border: rgba(129, 0, 0, 0.18);
+}
+
+.chat-bubble-user {
+  background: var(--chat-red);
+  color: var(--chat-blush);
+  border-radius: 24px 24px 4px 24px;
+}
+
+.chat-bubble-assistant {
+  background: #ffffff;
+  color: var(--chat-plum);
+  border: 1px solid var(--chat-red-border);
+  border-radius: 24px 24px 24px 4px;
+}
+
+.chat-panel {
+  background: var(--chat-blush);
+  border: 1px solid var(--chat-red-border);
+}
+
+.chat-header {
+  background: var(--chat-red);
+}
